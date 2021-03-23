@@ -5,7 +5,7 @@ import dereferencedSpecs from './dereferenced-specs';
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 yargs(hideBin(process.argv))
   .command(
-    '$0 <inputPath> <outputPath> <tmpPath>',
+    '$0 <inputPath> <outputPath>',
     'generate assets',
     (args) => {
       return args

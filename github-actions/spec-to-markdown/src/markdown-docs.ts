@@ -39,7 +39,9 @@ const convert = async (inputFile, outputFolder) => {
 };
 
 export default async (inputPath: string, outputPath: string) => {
-  const specPaths = await fg(`${inputPath}/**/*.openapi.yaml`);
+  const specPaths = await fg(
+    `${inputPath.replace(/\/$/, '')}/**/*.openapi.yaml`
+  );
   if (!existsSync(outputPath)) {
     mkdirSync(outputPath, { recursive: true });
   }
