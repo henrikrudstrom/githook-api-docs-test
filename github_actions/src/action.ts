@@ -9,6 +9,7 @@ import generate from './generate';
     const outputPath = core.getInput('output-path');
     await generate(specPath, outputPath);
   } catch (error) {
-    core.setFailed(error.message);
+    console.log(error);
+    // core.setFailed(error.message);
   }
 })();
