@@ -15,14 +15,15 @@ jobs:
         with:
           spec-path: './specifications'
           output-path: './output'
+          tmp-path: './tmp'
+
+      - name: Copy doc source
+        run: "cp -r ./source/* ./tmp/source/"
       - name: Build documentation
         uses: ./github_actions/generate_slate_docs_action
         env:
-          DOC_BASE_FOLDER: "./source"
+          DOC_BASE_FOLDER: "./tmp/source"
           DOC_OUTPUT_FOLDER: "./output"
-        # with:
-        #   input-path: './source'
-        #   output-path: './output/slate'
       - uses: actions/upload-artifact@v2
         with:
           name: spec-output
