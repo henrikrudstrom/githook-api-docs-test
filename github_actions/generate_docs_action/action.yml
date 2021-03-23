@@ -1,0 +1,12 @@
+name: 'generate docs'
+description: 'generate documentation files'
+inputs:
+  spec-path:  # id of input
+    description: 'path to spec root folder'
+    required: true
+  output-path:
+    description: 'root path to generated files'
+    required: true
+runs:
+    using: 'node12'
+    main: '../dist/index.js'

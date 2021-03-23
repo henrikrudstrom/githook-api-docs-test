@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "@amedia/eslint-config-typescript",
+    "prettier/@typescript-eslint"
+  ],
+  "rules": {
+    "no-console": "off"
+  },
+  "overrides": [
+    {
+      "plugins": ["jest"],
+      "files": ["./src/test/**/*.test.ts"],
+      "env": {
+        "jest": true
+      },
+      "extends": ["plugin:jest/recommended"]
+    }
+  ]
+}
