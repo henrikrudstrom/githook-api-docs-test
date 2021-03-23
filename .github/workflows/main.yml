@@ -20,7 +20,7 @@ jobs:
       - name: Copy doc source
         run: "mkdir -p ./tmp/source && cp -r ./source/* ./tmp/source/"
       - name: Build documentation
-        uses: ./github_actions/generate_slate_docs_action
+        uses: ./github-actions/slate-docs
         env:
           DOC_BASE_FOLDER: "./tmp/source"
           DOC_OUTPUT_FOLDER: "./output"
