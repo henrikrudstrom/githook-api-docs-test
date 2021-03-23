@@ -18,7 +18,7 @@ jobs:
           input-path: './specifications'
           output-path: './tmp/source'
       - name: Copy doc source
-        run: "mkdir -p ./tmp/source && cp -r ./documentation/source/* ./tmp/source/"
+        run: "mkdir -p ./tmp/source && cp -r ./api-docs/source/* ./tmp/source/"
       - name: Build documentation
         uses: ./github-actions/slate-docs
         env:
