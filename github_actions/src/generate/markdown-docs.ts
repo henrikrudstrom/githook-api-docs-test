@@ -42,6 +42,7 @@ export default async (inputPath: string, outputPath: string) => {
   const specPaths = await fg(`${inputPath}/**/*.openapi.yaml`);
   console.log(`${inputPath}/**/*.openapi.{yaml}`);
   console.log(specPaths);
+  console.log('outputPath ' + specPaths);
 
   if (!existsSync(outputPath)) {
     mkdirSync(outputPath, { recursive: true });

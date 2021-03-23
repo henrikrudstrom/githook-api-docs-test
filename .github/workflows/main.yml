@@ -15,10 +15,6 @@ jobs:
         with:
           spec-path: './specifications'
           output-path: './output'
-      - uses: actions/upload-artifact@v2
-        with:
-          name: spec-output
-          path: ./output/
       - name: Build documentation
         uses: docker://decathlon/slate-builder-action:latest
         env:
