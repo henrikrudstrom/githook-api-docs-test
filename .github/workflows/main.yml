@@ -20,7 +20,7 @@ jobs:
           name: spec-output
           path: ./output/
       - name: Build documentation
-        uses: docker://decathlon/slate-builder-action:2.0.0
+        uses: docker://decathlon/slate-builder-action:latest
         env:
           DOC_BASE_FOLDER:  "./output/source"
           ZIP_BUILD: "false"
