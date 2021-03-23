@@ -1,5 +1,5 @@
-import core from '@actions/core';
-import github from '@actions/github';
+import * as core from '@actions/core';
+import * as github from '@actions/github';
 import generate from './generate';
 
 (async () => {
@@ -9,7 +9,6 @@ import generate from './generate';
     const outputPath = core.getInput('output-path');
     await generate(specPath, outputPath);
   } catch (error) {
-    console.log(error);
-    // core.setFailed(error.message);
+    core.setFailed(error.message);
   }
 })();

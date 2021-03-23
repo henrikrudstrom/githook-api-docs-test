@@ -92256,6 +92256,25 @@ module.exports = ZSchema;
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -92296,7 +92315,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-var core_1 = __importDefault(__nccwpck_require__(42186));
+var core = __importStar(__nccwpck_require__(42186));
 var generate_1 = __importDefault(__nccwpck_require__(53677));
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     var specPath, outputPath, error_1;
@@ -92304,21 +92323,21 @@ var generate_1 = __importDefault(__nccwpck_require__(53677));
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                specPath = core_1.default.getInput('spec-path');
-                outputPath = core_1.default.getInput('output-path');
+                specPath = core.getInput('spec-path');
+                outputPath = core.getInput('output-path');
                 return [4 /*yield*/, generate_1.default(specPath, outputPath)];
             case 1:
                 _a.sent();
                 return [3 /*break*/, 3];
             case 2:
                 error_1 = _a.sent();
-                console.log(error_1);
+                core.setFailed(error_1.message);
                 return [3 /*break*/, 3];
             case 3: return [2 /*return*/];
         }
     });
 }); })();
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZmlsZTovLy9Vc2Vycy9oZW5yaWtydWRzdHJvbS9kZXYvaGVucmlrcnVkc3Ryb20vZ2l0aG9vay1hcGktZG9jcy10ZXN0L2dpdGh1Yl9hY3Rpb25zL3NyYy9hY3Rpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSx1REFBaUM7QUFFakMsd0RBQWtDO0FBRWxDLENBQUM7Ozs7OztnQkFHUyxRQUFRLEdBQUcsY0FBSSxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUMsQ0FBQztnQkFDdEMsVUFBVSxHQUFHLGNBQUksQ0FBQyxRQUFRLENBQUMsYUFBYSxDQUFDLENBQUM7Z0JBQ2hELHFCQUFNLGtCQUFRLENBQUMsUUFBUSxFQUFFLFVBQVUsQ0FBQyxFQUFBOztnQkFBcEMsU0FBb0MsQ0FBQzs7OztnQkFFckMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxPQUFLLENBQUMsQ0FBQzs7Ozs7S0FHdEIsQ0FBQyxFQUFFLENBQUMifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZmlsZTovLy9Vc2Vycy9oZW5yaWtydWRzdHJvbS9kZXYvaGVucmlrcnVkc3Ryb20vZ2l0aG9vay1hcGktZG9jcy10ZXN0L2dpdGh1Yl9hY3Rpb25zL3NyYy9hY3Rpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsa0RBQXNDO0FBRXRDLHdEQUFrQztBQUVsQyxDQUFDOzs7Ozs7Z0JBR1MsUUFBUSxHQUFHLElBQUksQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLENBQUM7Z0JBQ3RDLFVBQVUsR0FBRyxJQUFJLENBQUMsUUFBUSxDQUFDLGFBQWEsQ0FBQyxDQUFDO2dCQUNoRCxxQkFBTSxrQkFBUSxDQUFDLFFBQVEsRUFBRSxVQUFVLENBQUMsRUFBQTs7Z0JBQXBDLFNBQW9DLENBQUM7Ozs7Z0JBRXJDLElBQUksQ0FBQyxTQUFTLENBQUMsT0FBSyxDQUFDLE9BQU8sQ0FBQyxDQUFDOzs7OztLQUVqQyxDQUFDLEVBQUUsQ0FBQyJ9
 
 /***/ }),
 
