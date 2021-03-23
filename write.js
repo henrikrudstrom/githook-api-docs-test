@@ -13,7 +13,7 @@ try {
   console.log(`The event payload: ${payload}`);
 
   mkdirSync("output");
-  writeFileSync("output/test.txt", `hello ${nameToGreet}`);
+  writeFileSync("output/test.txt", `hello there ${nameToGreet}`);
 } catch (error) {
   core.setFailed(error.message);
 }
