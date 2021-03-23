@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  generate_api_docs:
+    runs-on: ubuntu-latest
+    name: Generate api docs
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello world action step
+        uses: ./github_actions/generate_docs_action # Uses an action in the root directory
+        id: generate
+        with:
+          spec-path: './specifications'
+          output-path: './output'
