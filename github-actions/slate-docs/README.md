@@ -11,5 +11,5 @@ docker build . -t slatedocs-action
 then from the root of this repo run:
 
 ```sh
-docker run -e DOC_BASE_FOLDER='./source' -e DOC_OUTPUT_FOLDER='./output' -v $(pwd):/wd --workdir=/wd slatedocs-action:latest
+docker run -e DOC_BASE_FOLDER='./documentation/source' -e DOC_OUTPUT_FOLDER='./output' -v $(pwd):/wd --workdir=/wd slatedocs-action:latest
 ```
