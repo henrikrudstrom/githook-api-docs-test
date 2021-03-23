@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tweak/drEditionArticleLists.json",
+  "type": "object",
+  "description": "Article configuration",
+  "additionalProperties": false,
+  "properties": {
+    "lists": {
+      "type": "array",
+      "description": "Standardlister",
+      "items": {
+        "$ref": "./sanityTypes.json#/definitions/reference"
+      }
+    },
+    "startfrequency": {
+      "type": "number",
+      "description": "Antall avsnitt før første innfletting"
+    },
+    "frequency": {
+      "type": "number",
+      "description": "Antall avsnitt mellom innflettinger"
+    },
+    "taglists": {
+      "type": "array",
+      "description": "Overstyr lister",
+      "items": {
+        "$ref": "#/definitions/tagOverrideList"
+      }
+    },
+    "_type": {
+      "type": "string",
+      "description": "Sanity type of object."
+    },
+    "_id": {
+      "type": "string",
+      "description": "Unique sanity document id"
+    },
+    "_rev": {
+      "type": "string",
+      "description": "Sanity revision id"
+    },
+    "_createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date the document was created"
+    },
+    "_updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Dato of last document update"
+    }
+  },
+  "required": [
+    "_type",
+    "_id",
+    "_rev",
+    "_createdAt",
+    "_updatedAt"
+  ],
+  "definitions": {
+    "tagOverrideList": {
+      "type": "object",
+      "description": "Overstyringer",
+      "properties": {
+        "tag": {
+          "type": "array",
+          "description": "Overstyr for følgende tags:",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accessLevel": {
+          "type": "string",
+          "description": "Tilgangsnivå"
+        },
+        "contentType": {
+          "type": "array",
+          "description": "Overstyr for følgende innholdstyper",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lists": {
+          "type": "array",
+          "description": "Lister",
+          "items": {
+            "$ref": "./sanityTypes.json#/definitions/reference"
+          }
+        },
+        "startfrequency": {
+          "type": "number",
+          "description": "Antall avsnitt før første innfletting"
+        },
+        "frequency": {
+          "type": "number",
+          "description": "Antall avsnitt mellom innflettinger"
+        },
+        "includeAll": {
+          "type": "boolean",
+          "description": "Legg ubrukte elementer under artikkel"
+        },
+        "hideTopBanner": {
+          "type": "boolean",
+          "description": "Skjul toppbanner"
+        },
+        "hideSkyscraper": {
+          "type": "boolean",
+          "description": "Skjul skyskraper"
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "_type"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

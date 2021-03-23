@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tweak/publicationSite.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "publicationKey": {
+      "type": "string",
+      "description": "Publikasjons-nøkkel"
+    },
+    "name": {
+      "type": "object",
+      "description": "Name",
+      "properties": {
+        "short": {
+          "type": "string",
+          "description": "Short"
+        },
+        "full": {
+          "type": "string",
+          "description": "Full"
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "short",
+        "full",
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "domains": {
+      "type": "object",
+      "description": "Domains",
+      "properties": {
+        "main": {
+          "type": "string",
+          "description": "Main"
+        },
+        "aliases": {
+          "type": "array",
+          "description": "Aliases",
+          "items": {
+            "type": "string"
+          }
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "_type": {
+      "type": "string",
+      "description": "Sanity type of object."
+    },
+    "_id": {
+      "type": "string",
+      "description": "Unique sanity document id"
+    },
+    "_rev": {
+      "type": "string",
+      "description": "Sanity revision id"
+    },
+    "_createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date the document was created"
+    },
+    "_updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Dato of last document update"
+    }
+  },
+  "required": [
+    "publicationKey",
+    "_type",
+    "_id",
+    "_rev",
+    "_createdAt",
+    "_updatedAt"
+  ],
+  "definitions": {}
+}

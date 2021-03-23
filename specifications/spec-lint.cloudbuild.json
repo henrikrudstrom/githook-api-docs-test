@@ -1,0 +1,8 @@
+{
+  "steps": [
+    {
+      "name": "eu.gcr.io/amedia-core/amedia/spec-lint:latest",
+      "args": ["/workspace/specifications/services/**/*.{yaml,json,yml}"]
+    }
+  ]
+}

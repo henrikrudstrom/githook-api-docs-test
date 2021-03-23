@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tweak/drEditionSectionLists.json",
+  "type": "object",
+  "description": "Section and tag page Content",
+  "additionalProperties": false,
+  "properties": {
+    "lists": {
+      "type": "array",
+      "description": "Dr.Edition Lists",
+      "items": {
+        "$ref": "./sanityTypes.json#/definitions/reference"
+      }
+    },
+    "_type": {
+      "type": "string",
+      "description": "Sanity type of object."
+    },
+    "_id": {
+      "type": "string",
+      "description": "Unique sanity document id"
+    },
+    "_rev": {
+      "type": "string",
+      "description": "Sanity revision id"
+    },
+    "_createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date the document was created"
+    },
+    "_updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Dato of last document update"
+    }
+  },
+  "required": [
+    "_type",
+    "_id",
+    "_rev",
+    "_createdAt",
+    "_updatedAt"
+  ],
+  "definitions": {}
+}

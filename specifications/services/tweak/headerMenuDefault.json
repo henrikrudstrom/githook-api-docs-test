@@ -1,0 +1,263 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tweak/headerMenuDefault.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "publicationKey": {
+      "type": "string",
+      "description": "Publikasjons-nøkkel"
+    },
+    "topMenu": {
+      "$ref": "#/definitions/linkSection"
+    },
+    "topics": {
+      "$ref": "#/definitions/linkSection"
+    },
+    "aToZ": {
+      "$ref": "#/definitions/linkSection"
+    },
+    "tipUs": {
+      "$ref": "#/definitions/tipUsSection"
+    },
+    "customerService": {
+      "$ref": "#/definitions/customerServiceSection"
+    },
+    "share": {
+      "$ref": "#/definitions/shareSection"
+    },
+    "follow": {
+      "$ref": "#/definitions/followSection"
+    },
+    "otherTitles": {
+      "$ref": "#/definitions/linkSection"
+    },
+    "advertising": {
+      "type": "object",
+      "description": "Annonsering",
+      "properties": {
+        "businessUrl": {
+          "type": "string",
+          "description": "Bedrift url"
+        },
+        "privateUrl": {
+          "type": "string",
+          "description": "Privat url"
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "_type": {
+      "type": "string",
+      "description": "Sanity type of object."
+    },
+    "_id": {
+      "type": "string",
+      "description": "Unique sanity document id"
+    },
+    "_rev": {
+      "type": "string",
+      "description": "Sanity revision id"
+    },
+    "_createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date the document was created"
+    },
+    "_updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Dato of last document update"
+    }
+  },
+  "required": [
+    "publicationKey",
+    "_type",
+    "_id",
+    "_rev",
+    "_createdAt",
+    "_updatedAt"
+  ],
+  "definitions": {
+    "linkSection": {
+      "type": "object",
+      "properties": {
+        "elements": {
+          "type": "array",
+          "description": "Lenker",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "tipUsSection": {
+      "type": "object",
+      "description": "Tips oss seksjon",
+      "properties": {
+        "tlf": {
+          "type": "string",
+          "description": "Telefonnummer"
+        },
+        "email": {
+          "type": "string",
+          "description": "E-post"
+        },
+        "smsNumber": {
+          "type": "string",
+          "description": "SMS nummer"
+        },
+        "smsKeyword": {
+          "type": "string",
+          "description": "SMS kodeord"
+        },
+        "link": {
+          "type": "string",
+          "description": "Link til tips-oss skjema"
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "customerServiceSection": {
+      "type": "object",
+      "properties": {
+        "tlf": {
+          "type": "string",
+          "description": "Telefonnummer"
+        },
+        "elements": {
+          "type": "array",
+          "description": "Lenker",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "shareSection": {
+      "type": "object",
+      "properties": {
+        "elements": {
+          "type": "array",
+          "description": "Dele lenker",
+          "items": {
+            "$ref": "#/definitions/shareLink"
+          }
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "followSection": {
+      "type": "object",
+      "properties": {
+        "facebook": {
+          "type": "string",
+          "description": "Link til Facebook"
+        },
+        "twitter": {
+          "type": "string",
+          "description": "Link til Twitter"
+        },
+        "instagram": {
+          "type": "string",
+          "description": "Link til Instagram"
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "link": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Tittel"
+        },
+        "href": {
+          "type": "string",
+          "description": "URL"
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "title",
+        "href",
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "shareLink": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Tittel"
+        },
+        "href": {
+          "type": "string",
+          "description": "URL"
+        },
+        "icon": {
+          "type": "string",
+          "description": "Ikon"
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "title",
+        "href",
+        "_type"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

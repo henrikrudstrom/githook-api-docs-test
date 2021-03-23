@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "metadata/municipality.json",
+  "type": "object",
+  "description": "Municipality",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name"
+    },
+    "municipalityId": {
+      "type": "string",
+      "description": "Municipality Id"
+    },
+    "county": {
+      "$ref": "./sanityTypes.json#/definitions/reference"
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Disabled"
+    },
+    "_type": {
+      "type": "string",
+      "description": "Sanity type of object."
+    },
+    "_id": {
+      "type": "string",
+      "description": "Unique sanity document id"
+    },
+    "_rev": {
+      "type": "string",
+      "description": "Sanity revision id"
+    },
+    "_createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date the document was created"
+    },
+    "_updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Dato of last document update"
+    }
+  },
+  "required": [
+    "name",
+    "municipalityId",
+    "county",
+    "_type",
+    "_id",
+    "_rev",
+    "_createdAt",
+    "_updatedAt"
+  ],
+  "definitions": {}
+}

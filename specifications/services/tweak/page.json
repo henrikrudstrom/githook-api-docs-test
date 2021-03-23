@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tweak/page.json",
+  "type": "object",
+  "description": "Page configuration",
+  "additionalProperties": false,
+  "properties": {
+    "page": {
+      "type": "string",
+      "description": "Page"
+    },
+    "header": {
+      "type": "array",
+      "description": "Components for the header",
+      "items": {
+        "$ref": "#/definitions/component"
+      }
+    },
+    "leftColumn": {
+      "type": "array",
+      "description": "Components for the left column",
+      "items": {
+        "$ref": "#/definitions/component"
+      }
+    },
+    "rightColumn": {
+      "type": "array",
+      "description": "Components for the right column",
+      "items": {
+        "$ref": "#/definitions/component"
+      }
+    },
+    "main": {
+      "type": "array",
+      "description": "Components for the main content",
+      "items": {
+        "$ref": "#/definitions/component"
+      }
+    },
+    "bottom": {
+      "type": "array",
+      "description": "Components for the bottom content",
+      "items": {
+        "$ref": "#/definitions/component"
+      }
+    },
+    "_type": {
+      "type": "string",
+      "description": "Sanity type of object."
+    },
+    "_id": {
+      "type": "string",
+      "description": "Unique sanity document id"
+    },
+    "_rev": {
+      "type": "string",
+      "description": "Sanity revision id"
+    },
+    "_createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date the document was created"
+    },
+    "_updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Dato of last document update"
+    }
+  },
+  "required": [
+    "_type",
+    "_id",
+    "_rev",
+    "_createdAt",
+    "_updatedAt"
+  ],
+  "definitions": {
+    "component": {
+      "type": "object",
+      "description": "Komponent",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Tittel"
+        },
+        "manifest": {
+          "type": "string",
+          "description": "Manifest"
+        },
+        "parameters": {
+          "type": "array",
+          "description": "Parametere",
+          "items": {
+            "$ref": "#/definitions/parameter"
+          }
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "title",
+        "manifest",
+        "_type"
+      ],
+      "additionalProperties": false
+    },
+    "parameter": {
+      "type": "object",
+      "description": "Parameter",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "key"
+        },
+        "value": {
+          "type": "string",
+          "description": "value"
+        },
+        "_type": {
+          "type": "string",
+          "description": "Sanity type of object."
+        }
+      },
+      "required": [
+        "key",
+        "value",
+        "_type"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
