@@ -11,6 +11,6 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    DOC_BASE_FOLDER: "./source"
-    DOC_OUTPUT_FOLDER: "./output"
+  # env:
+  #   DOC_BASE_FOLDER: "./source"
+  #   DOC_OUTPUT_FOLDER: "./output"

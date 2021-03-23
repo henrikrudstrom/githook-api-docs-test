@@ -17,9 +17,12 @@ jobs:
           output-path: './output'
       - name: Build documentation
         uses: ./github_actions/generate_slate_docs_action
-        with:
-          input-path: './source'
-          output-path: './output/slate'
+        env:
+          DOC_BASE_FOLDER: "./source"
+          DOC_OUTPUT_FOLDER: "./output"
+        # with:
+        #   input-path: './source'
+        #   output-path: './output/slate'
       - uses: actions/upload-artifact@v2
         with:
           name: spec-output
