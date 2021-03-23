@@ -2,8 +2,4 @@ node_modules
 build
 .hypothesis
 .DS_Store
-<<<<<<< HEAD
-=======
-.[#]*[#]
->>>>>>> 38cca76 (copy over)
 tmp
