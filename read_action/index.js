@@ -3,8 +3,8 @@ const github = require("@actions/github");
 const { readFileSync } = require("fs");
 
 try {
-  const file = readFileSync("output/test.txt", `hello ${nameToGreet}`);
-  console.log(`file contents: ${file}`);
+  const file = readFileSync("output/test.txt");
+  console.log(`file contents: ${file.toString()}`);
 } catch (error) {
   core.setFailed(error.message);
 }
