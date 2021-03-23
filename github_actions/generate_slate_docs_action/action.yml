@@ -12,5 +12,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    DOC_BASE_FOLDER: ${{ inputs.input-dir }}
-    DOC_OUTPUT_FOLDER: ${{ inputs.output-dir }}
+    DOC_BASE_FOLDER: "${{ inputs.input-dir }}"
+    DOC_OUTPUT_FOLDER: "${{ inputs.output-dir }}"
