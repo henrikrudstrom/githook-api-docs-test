@@ -2,4 +2,4 @@ name: 'read hello'
 description: 'Greet someone and record the time'
 runs:
     using: 'node12'
-    main: 'index.js'
+    main: '../read.js'
