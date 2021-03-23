@@ -9,12 +9,21 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world action step
+      - name: Generate spec and doc files
         uses: ./github_actions/generate_docs_action # Uses an action in the root directory
         id: generate
         with:
           spec-path: './specifications'
           output-path: './output'
+      - uses: actions/upload-artifact@v2
+        with:
+          name: spec-output
+          path: ./output/
+      - name: Build documentation
+        uses: docker://decathlon/slate-builder-action:2.0.0
+        env:
+          DOC_BASE_FOLDER = "./output/source"
+          ZIP_BUILD = "false"
       - uses: actions/upload-artifact@v2
         with:
           name: spec-output
