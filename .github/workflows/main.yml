@@ -11,7 +11,7 @@ jobs:
         uses: ./github-actions/process-specs
         with:
           input-path: './specifications'
-          output-path: './output'
+          output-path: './output/specs'
       - name: specs to markdown
         uses: ./github-actions/spec-to-markdown
         with:
