@@ -18,7 +18,7 @@ jobs:
           tmp-path: './tmp'
 
       - name: Copy doc source
-        run: "cp -r ./source/* ./tmp/source/"
+        run: "mkdir -p ./tmp/source && cp -r ./source/* ./tmp/source/"
       - name: Build documentation
         uses: ./github_actions/generate_slate_docs_action
         env:
