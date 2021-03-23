@@ -1,0 +1,563 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "root": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "cms": {
+              "type": "object",
+              "properties": {
+                "sectionSource": {
+                  "type": "string",
+                  "enum": ["escenic", "autolayout"],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                },
+                "frontpageSource": {
+                  "type": "object",
+                  "properties": {
+                    "desktop": {
+                      "type": "string",
+                      "enum": ["cloud", "autolayout", "ece"],
+                      "description": "Enum derived from sample data on 2021-02-16."
+                    },
+                    "mobile": {
+                      "type": "string",
+                      "enum": ["cloud", "autolayout", "ece"],
+                      "description": "Enum derived from sample data on 2021-02-16."
+                    }
+                  },
+                  "required": ["desktop", "mobile"]
+                },
+                "metadataBackend": {
+                  "type": "string",
+                  "enum": ["cloudordino"],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                }
+              },
+              "required": ["frontpageSource"]
+            },
+            "aid": {
+              "type": "object",
+              "properties": {
+                "family_enabled": { "type": "boolean" },
+                "enabled": { "type": "boolean" },
+                "campaignRider": { "type": "boolean" },
+                "digital_only": { "type": "boolean" },
+                "legal_entity": {
+                  "type": "string",
+                  "enum": [
+                    "aid",
+                    "amedia",
+                    "aller",
+                    "kommunalrapport",
+                    "budstikka",
+                    "njff",
+                    "epicurus",
+                    "hytteforvaltning"
+                  ],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                },
+                "onboarding_mode": { "type": "boolean" }
+              },
+              "required": ["enabled", "digital_only"]
+            },
+            "visiolink": {
+              "type": "object",
+              "properties": {
+                "identifier": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 84 distinct values on 2021-02-16."
+                }
+              },
+              "required": ["identifier"]
+            },
+            "varnish": {
+              "type": "object",
+              "properties": {
+                "default_backend": {
+                  "type": "string",
+                  "enum": [
+                    "apache",
+                    "wirkola",
+                    "maelstrom",
+                    "vesta",
+                    "plussalt"
+                  ],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                },
+                "force_https": { "type": "boolean" }
+              },
+              "required": ["default_backend", "force_https"]
+            },
+            "recommendations": {
+              "type": "object",
+              "properties": {
+                "engineV1": {
+                  "type": "object",
+                  "properties": {
+                    "position": {
+                      "type": "integer",
+                      "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+                      "minimum": 6,
+                      "maximum": 6
+                    },
+                    "kind": {
+                      "type": "string",
+                      "enum": ["DataTopListWithHashes"],
+                      "description": "Enum derived from sample data on 2021-02-16."
+                    },
+                    "disabled": { "type": "boolean" }
+                  },
+                  "required": ["position", "kind", "disabled"]
+                },
+                "engineSublistV1": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": ["DataTopListWithHashes"],
+                      "description": "Enum derived from sample data on 2021-02-16."
+                    },
+                    "size": {
+                      "type": "integer",
+                      "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+                      "minimum": 10,
+                      "maximum": 10
+                    },
+                    "disabled": { "type": "boolean" }
+                  },
+                  "required": ["kind", "size", "disabled"]
+                },
+                "consumermarketing": {
+                  "type": "object",
+                  "properties": {
+                    "teaserId": {
+                      "type": "string",
+                      "description": "Possible enum ignored, as sample data included 74 distinct values on 2021-02-16."
+                    },
+                    "position": {
+                      "type": "integer",
+                      "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+                      "minimum": 10,
+                      "maximum": 10
+                    },
+                    "disabled": { "type": "boolean" }
+                  },
+                  "required": ["teaserId", "position", "disabled"]
+                }
+              }
+            },
+            "escenic": {
+              "type": "object",
+              "properties": {
+                "acpPubKey": {
+                  "type": "integer",
+                  "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+                  "minimum": 1,
+                  "maximum": 128
+                },
+                "backendKey": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 121 distinct values on 2021-02-16."
+                },
+                "publicationName": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 121 distinct values on 2021-02-16."
+                }
+              },
+              "required": ["acpPubKey", "backendKey", "publicationName"]
+            },
+            "design": {
+              "type": "string",
+              "enum": ["nettavisen", "default"],
+              "description": "Enum derived from sample data on 2021-02-16."
+            },
+            "chat": {
+              "type": "object",
+              "properties": {
+                "queueName": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 88 distinct values on 2021-02-16."
+                },
+                "orgName": {
+                  "type": "string",
+                  "enum": ["amediakundesenter"],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                },
+                "orgId": {
+                  "type": "string",
+                  "enum": ["8861"],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                }
+              },
+              "required": ["queueName", "orgName", "orgId"]
+            },
+            "ssl": {
+              "type": "object",
+              "properties": {
+                "httpHost": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 77 distinct values on 2021-02-16."
+                  }
+                },
+                "dnsWildcard": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 95 distinct values on 2021-02-16."
+                  }
+                },
+                "edges": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["varnish"],
+                    "description": "Enum derived from sample data on 2021-02-16."
+                  }
+                }
+              },
+              "required": ["edges"]
+            },
+            "feature": {
+              "type": "object",
+              "properties": {
+                "churn": {
+                  "type": "string",
+                  "enum": ["ab", "off"],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                }
+              },
+              "required": ["churn"]
+            },
+            "linpro": {
+              "type": "object",
+              "properties": { "monitored": { "type": "boolean" } },
+              "required": ["monitored"]
+            },
+            "sms": {
+              "type": "object",
+              "properties": {
+                "gateway": {
+                  "type": "string",
+                  "enum": ["tellus"],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                }
+              },
+              "required": ["gateway"]
+            },
+            "apps": {
+              "type": "object",
+              "properties": {
+                "nyhetsappen": {
+                  "type": "object",
+                  "properties": {
+                    "newspaperId": {
+                      "type": "string",
+                      "description": "Possible enum ignored, as sample data included 101 distinct values on 2021-02-16."
+                    },
+                    "ios": {
+                      "type": "object",
+                      "properties": {
+                        "appId": {
+                          "type": "string",
+                          "description": "Possible enum ignored, as sample data included 95 distinct values on 2021-02-16."
+                        }
+                      },
+                      "required": ["appId"]
+                    },
+                    "android": {
+                      "type": "object",
+                      "properties": {
+                        "appId": {
+                          "type": "string",
+                          "description": "Possible enum ignored, as sample data included 95 distinct values on 2021-02-16."
+                        }
+                      },
+                      "required": ["appId"]
+                    }
+                  },
+                  "required": ["newspaperId"]
+                }
+              },
+              "required": ["nyhetsappen"]
+            },
+            "subscription_system": {
+              "type": "object",
+              "properties": {
+                "nets_params": {
+                  "type": "object",
+                  "properties": {
+                    "account_number": {
+                      "type": "string",
+                      "description": "Possible enum ignored, as sample data included 84 distinct values on 2021-02-16."
+                    },
+                    "issuer_id": {
+                      "type": "string",
+                      "description": "Possible enum ignored, as sample data included 84 distinct values on 2021-02-16."
+                    },
+                    "setup_code": {
+                      "type": "string",
+                      "description": "Possible enum ignored, as sample data included 98 distinct values on 2021-02-16."
+                    },
+                    "merchant_id": {
+                      "type": "string",
+                      "description": "Possible enum ignored, as sample data included 87 distinct values on 2021-02-16."
+                    }
+                  },
+                  "required": ["setup_code", "merchant_id"]
+                },
+                "instance": {
+                  "type": "string",
+                  "enum": ["tisdb", "amedia", "isdb", "inba", "isbud", "ingu"],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                },
+                "title_code": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 103 distinct values on 2021-02-16."
+                },
+                "vipps_params": {
+                  "type": "object",
+                  "properties": {
+                    "client_id": {
+                      "type": "string",
+                      "enum": ["339de0b6-c791-4be3-b430-9e8675b2ed57"],
+                      "description": "Enum derived from sample data on 2021-02-16."
+                    }
+                  },
+                  "required": ["client_id"]
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["infosoft"],
+                  "description": "Enum derived from sample data on 2021-02-16."
+                },
+                "locked": { "type": "boolean" }
+              },
+              "required": ["instance", "title_code", "type"]
+            },
+            "gsuite": {
+              "type": "object",
+              "properties": {
+                "group": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 89 distinct values on 2021-02-16."
+                },
+                "orgunit": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 86 distinct values on 2021-02-16."
+                }
+              },
+              "required": ["orgunit"]
+            },
+            "title_info": {
+              "type": "object",
+              "properties": {
+                "sites": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 113 distinct values on 2021-02-16."
+                  }
+                },
+                "participates_in_plussalt": { "type": "boolean" },
+                "title_code": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 104 distinct values on 2021-02-16."
+                }
+              },
+              "required": ["sites", "participates_in_plussalt", "title_code"]
+            },
+            "dredition": {
+              "type": "object",
+              "properties": {
+                "editorialGroup": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 111 distinct values on 2021-02-16."
+                },
+                "frontId": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 111 distinct values on 2021-02-16."
+                }
+              },
+              "required": ["editorialGroup", "frontId"]
+            },
+            "webforwards": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 13 distinct values on 2021-02-16."
+                  },
+                  "http_code": {
+                    "type": "integer",
+                    "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+                    "minimum": 301,
+                    "maximum": 301
+                  }
+                },
+                "required": ["url", "http_code"]
+              }
+            },
+            "analytics": {
+              "type": "object",
+              "properties": {
+                "class": {
+                  "type": "string",
+                  "enum": ["VEI4", "VEI2", "VEI0", "VEI3", "VEI5", "VEI1"],
+                  "description": "Enum derived from sample data on 2021-02-16.",
+                  "nullable": true
+                },
+                "local_newspaper": { "type": "boolean" },
+                "region": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 12 distinct values on 2021-02-16."
+                },
+                "amedia_owned": { "type": "boolean" },
+                "a_virtual": {
+                  "type": "string",
+                  "description": "Possible enum ignored, as sample data included 166 distinct values on 2021-02-16."
+                },
+                "site_groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sites": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "description": "Possible enum ignored, as sample data included 32 distinct values on 2021-02-16."
+                        }
+                      },
+                      "main_group": { "type": "boolean" },
+                      "title_filter": {
+                        "type": "string",
+                        "enum": [
+                          "JA",
+                          "OY",
+                          "TB",
+                          "TRO",
+                          "SB",
+                          "NIDA",
+                          "GJ",
+                          "OP",
+                          "NA"
+                        ],
+                        "description": "Enum derived from sample data on 2021-02-16."
+                      },
+                      "benchmark_groups": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "description": "Possible enum ignored, as sample data included 79 distinct values on 2021-02-16."
+                        }
+                      },
+                      "group_key": {
+                        "type": "string",
+                        "description": "Possible enum ignored, as sample data included 123 distinct values on 2021-02-16."
+                      }
+                    },
+                    "required": ["group_key"]
+                  }
+                }
+              },
+              "required": ["a_virtual"]
+            },
+            "premium_design": {
+              "type": "string",
+              "enum": ["default"],
+              "description": "Enum derived from sample data on 2021-02-16."
+            }
+          },
+          "required": ["aid", "design", "linpro", "analytics"]
+        },
+        "key": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 210 distinct values on 2021-02-16."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "legal_entity_kommunalrapport",
+              "legal_entity_njff",
+              "publication",
+              "rubrikk",
+              "test-webhook-1",
+              "aid_websites_overview",
+              "legal_entity_curus",
+              "legal_entity_aller",
+              "testpublication"
+            ],
+            "description": "Enum derived from sample data on 2021-02-16."
+          }
+        },
+        "id": {
+          "type": "integer",
+          "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+          "minimum": -3309294,
+          "maximum": 5541029
+        },
+        "name": {
+          "type": "object",
+          "properties": {
+            "short": {
+              "type": "string",
+              "description": "Possible enum ignored, as sample data included 202 distinct values on 2021-02-16."
+            },
+            "full": {
+              "type": "string",
+              "description": "Possible enum ignored, as sample data included 208 distinct values on 2021-02-16."
+            }
+          },
+          "required": ["short", "full"]
+        },
+        "locale": {
+          "type": "string",
+          "enum": ["nn", "nb"],
+          "description": "Enum derived from sample data on 2021-02-16."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["inactive", "active"],
+          "description": "Enum derived from sample data on 2021-02-16."
+        },
+        "domains": {
+          "type": "object",
+          "properties": {
+            "aliases": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "description": "Possible enum ignored, as sample data included 181 distinct values on 2021-02-16."
+              }
+            },
+            "main": {
+              "type": "string",
+              "description": "Possible enum ignored, as sample data included 210 distinct values on 2021-02-16."
+            }
+          },
+          "required": ["main"]
+        }
+      },
+      "required": [
+        "config",
+        "key",
+        "tags",
+        "id",
+        "name",
+        "locale",
+        "status",
+        "domains"
+      ]
+    }
+  }
+}

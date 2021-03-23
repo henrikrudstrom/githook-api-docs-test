@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "root": {
+      "description": "info about publication",
+      "type": "object",
+      "properties": {
+        "ece5PublicationName": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 121 distinct values on 2021-02-16.",
+          "nullable": true
+        },
+        "ece5AcpPubKey": {
+          "type": "integer",
+          "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+          "minimum": 0,
+          "maximum": 128
+        },
+        "domainAliases": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 16 distinct values on 2021-02-16.",
+          "nullable": true
+        },
+        "cms": {
+          "type": "string",
+          "enum": ["-", "ece5"],
+          "description": "Enum derived from sample data on 2021-02-16."
+        },
+        "medusaFlag": {
+          "type": "integer",
+          "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ece5BackendKey": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 121 distinct values on 2021-02-16.",
+          "nullable": true
+        },
+        "escenic": { "type": "boolean" },
+        "displayName": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 202 distinct values on 2021-02-16."
+        },
+        "mobDomain": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 138 distinct values on 2021-02-16."
+        },
+        "nedstatCode": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 166 distinct values on 2021-02-16."
+        },
+        "id": {
+          "type": "integer",
+          "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+          "minimum": -3309294,
+          "maximum": 5541029
+        },
+        "fullDisplayName": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 208 distinct values on 2021-02-16."
+        },
+        "name": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 210 distinct values on 2021-02-16."
+        },
+        "apayEnabled": { "type": "boolean" },
+        "escenicFlag": {
+          "type": "integer",
+          "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "wwwDomain": {
+          "type": "string",
+          "description": "Possible enum ignored, as sample data included 210 distinct values on 2021-02-16."
+        },
+        "medusa": { "type": "boolean" }
+      },
+      "additionalProperties": false,
+      "required": [
+        "ece5PublicationName",
+        "ece5AcpPubKey",
+        "domainAliases",
+        "cms",
+        "medusaFlag",
+        "ece5BackendKey",
+        "escenic",
+        "displayName",
+        "mobDomain",
+        "nedstatCode",
+        "id",
+        "fullDisplayName",
+        "name",
+        "apayEnabled",
+        "escenicFlag",
+        "wwwDomain",
+        "medusa"
+      ]
+    }
+  }
+}

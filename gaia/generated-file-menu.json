@@ -1,0 +1,533 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "root": {
+      "description": "Menu structure for header menu in web, deprecated",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "topics": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "enum": ["", "topics"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "title": {
+              "type": "string",
+              "enum": [
+                "",
+                "Lokale sider",
+                "Aktuelle tema",
+                "Aktuelt",
+                "Leter du etter dette?",
+                "Aktuelle temaer"
+              ],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "elements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 302 distinct values on 2021-02-17."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 246 distinct values on 2021-02-17."
+                  },
+                  "target": {
+                    "type": "string",
+                    "enum": [""],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  },
+                  "channel": {
+                    "type": "string",
+                    "enum": ["desktop"],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  }
+                },
+                "required": ["href", "name", "target", "channel"]
+              }
+            }
+          },
+          "required": ["id", "title", "elements"]
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "enum": ["", "tags"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "title": {
+              "type": "string",
+              "enum": ["", "Toppmeny"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "elements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 354 distinct values on 2021-02-17."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 218 distinct values on 2021-02-17."
+                  },
+                  "target": {
+                    "type": "string",
+                    "enum": [""],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  },
+                  "channel": {
+                    "type": "string",
+                    "enum": ["desktop"],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  }
+                },
+                "required": ["href", "name", "target", "channel"]
+              }
+            }
+          },
+          "required": ["id", "title", "elements"]
+        },
+        "customerService": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "enum": ["", "customerservice"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "title": {
+              "type": "string",
+              "enum": ["", "Kundesenter", "Kundeservice2", "Kundeservice"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "elements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 241 distinct values on 2021-02-17.",
+                    "nullable": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 222 distinct values on 2021-02-17."
+                  },
+                  "target": {
+                    "type": "string",
+                    "enum": ["", "customerservicetlf"],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  },
+                  "channel": { "nullable": true }
+                },
+                "required": ["href", "name", "target", "channel"]
+              }
+            }
+          },
+          "required": ["id", "title", "elements"]
+        },
+        "otherTitles": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "enum": ["", "othertitles"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "title": {
+              "type": "string",
+              "enum": [
+                "",
+                "SAMARBEIDENDE AVISER",
+                "Våre andre aviser",
+                "Våre andre nettstader",
+                "Amedias Aviser i Telemark og Agder",
+                "Amedias aviser i Telemark og Agder"
+              ],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "elements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 71 distinct values on 2021-02-17."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 68 distinct values on 2021-02-17."
+                  },
+                  "target": {
+                    "type": "string",
+                    "enum": [""],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  },
+                  "channel": { "nullable": true }
+                },
+                "required": ["href", "name", "target", "channel"]
+              }
+            }
+          },
+          "required": ["id", "title", "elements"]
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "enum": [
+                  "topics",
+                  "tipus",
+                  "tags",
+                  "othertitles",
+                  "follow",
+                  "customerservice",
+                  "share"
+                ],
+                "description": "Enum derived from sample data on 2021-02-17.",
+                "nullable": true
+              },
+              "title": {
+                "type": "string",
+                "description": "Possible enum ignored, as sample data included 37 distinct values on 2021-02-17."
+              },
+              "elements": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "href": {
+                      "type": "string",
+                      "description": "Possible enum ignored, as sample data included 1862 distinct values on 2021-02-17.",
+                      "nullable": true
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Possible enum ignored, as sample data included 1454 distinct values on 2021-02-17."
+                    },
+                    "target": {
+                      "type": "string",
+                      "description": "Possible enum ignored, as sample data included 14 distinct values on 2021-02-17.",
+                      "nullable": true
+                    },
+                    "channel": {
+                      "type": "string",
+                      "enum": ["desktop", "mobile"],
+                      "description": "Enum derived from sample data on 2021-02-17.",
+                      "nullable": true
+                    }
+                  },
+                  "required": ["href", "name", "target", "channel"]
+                }
+              }
+            },
+            "required": ["id", "title", "elements"]
+          }
+        },
+        "name": {
+          "type": "string",
+          "enum": ["topmenu", "Påskenøtter"],
+          "description": "Enum derived from sample data on 2021-02-17."
+        },
+        "atoZ": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "enum": [""],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "title": {
+              "type": "string",
+              "enum": [""],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "elements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 949 distinct values on 2021-02-17.",
+                    "nullable": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 623 distinct values on 2021-02-17."
+                  },
+                  "target": {
+                    "type": "string",
+                    "enum": [""],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  },
+                  "channel": {
+                    "type": "string",
+                    "enum": ["desktop", "mobile"],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  }
+                },
+                "required": ["href", "name", "target", "channel"]
+              }
+            }
+          },
+          "required": ["id", "title", "elements"]
+        },
+        "tipUs": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "enum": ["", "tipus"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "title": {
+              "type": "string",
+              "enum": [
+                "",
+                "Tips oss",
+                "Tips oss:",
+                "Tips",
+                "Kontakt oss",
+                "Kontakt oss!",
+                "Tips redaksjonen"
+              ],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "elements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 31 distinct values on 2021-02-17.",
+                    "nullable": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 301 distinct values on 2021-02-17."
+                  },
+                  "target": {
+                    "type": "string",
+                    "enum": ["", "tipemail", "tipsms", "tiplink", "tiptlf"],
+                    "description": "Enum derived from sample data on 2021-02-17."
+                  },
+                  "channel": {
+                    "type": "string",
+                    "enum": ["mobile"],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  }
+                },
+                "required": ["href", "name", "target", "channel"]
+              }
+            }
+          },
+          "required": ["id", "title", "elements"]
+        },
+        "follow": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "enum": ["", "follow"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "title": {
+              "type": "string",
+              "enum": ["", "Følg oss", "Følg oss!", "Følg oss på:"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "elements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 202 distinct values on 2021-02-17."
+                  },
+                  "name": {
+                    "type": "string",
+                    "enum": [
+                      "Følg oss på Facebook",
+                      "Følg oss på Instagram",
+                      "twitter",
+                      "instagram",
+                      "facebook",
+                      "Snapchat",
+                      "Twitter",
+                      "Podkast",
+                      "Facebook",
+                      "Instagram"
+                    ],
+                    "description": "Enum derived from sample data on 2021-02-17."
+                  },
+                  "target": {
+                    "type": "string",
+                    "enum": ["", "twitter", "instagram", "facebook"],
+                    "description": "Enum derived from sample data on 2021-02-17."
+                  },
+                  "channel": { "nullable": true }
+                },
+                "required": ["href", "name", "target", "channel"]
+              }
+            }
+          },
+          "required": ["id", "title", "elements"]
+        },
+        "challengeTops": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "image": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "src": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 13 distinct values on 2021-02-17."
+                  },
+                  "alt": {
+                    "type": "string",
+                    "enum": ["", "Julekalender 2017", "Les meir", "Les mer"],
+                    "description": "Enum derived from sample data on 2021-02-17.",
+                    "nullable": true
+                  }
+                },
+                "required": ["src", "alt"]
+              },
+              "id": {
+                "type": "string",
+                "enum": ["noaccess", "access", "unknown"],
+                "description": "Enum derived from sample data on 2021-02-17.",
+                "nullable": true
+              },
+              "href": {
+                "type": "string",
+                "description": "Possible enum ignored, as sample data included 205 distinct values on 2021-02-17."
+              },
+              "mainText": {
+                "type": "string",
+                "description": "Possible enum ignored, as sample data included 28 distinct values on 2021-02-17.",
+                "nullable": true
+              },
+              "subText": {
+                "type": "string",
+                "description": "Possible enum ignored, as sample data included 25 distinct values on 2021-02-17.",
+                "nullable": true
+              }
+            },
+            "required": ["image", "id", "href", "mainText", "subText"]
+          },
+          "nullable": true
+        },
+        "share": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "enum": ["", "share"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "title": {
+              "type": "string",
+              "enum": ["", "Del", "Del med oss"],
+              "description": "Enum derived from sample data on 2021-02-17."
+            },
+            "elements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 39 distinct values on 2021-02-17."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 33 distinct values on 2021-02-17."
+                  },
+                  "target": {
+                    "type": "string",
+                    "enum": [
+                      "",
+                      "videoupload",
+                      "sendgreet",
+                      "writeletter",
+                      "uploadimage",
+                      "addevent"
+                    ],
+                    "description": "Enum derived from sample data on 2021-02-17."
+                  },
+                  "channel": { "nullable": true }
+                },
+                "required": ["href", "name", "target", "channel"]
+              }
+            }
+          },
+          "required": ["id", "title", "elements"]
+        }
+      },
+      "required": [
+        "topics",
+        "tags",
+        "customerService",
+        "otherTitles",
+        "categories",
+        "name",
+        "atoZ",
+        "tipUs",
+        "follow",
+        "challengeTops",
+        "share"
+      ]
+    }
+  }
+}

@@ -1,0 +1,300 @@
+---
+openapi: 3.0.1
+info:
+  version: 1.0.0
+  title: Gaia
+  description: Gaia configuration server
+  contact:
+    url: https://github.com/amedia/gaia/
+servers:
+  - url: 'http://services.snap0.api.no'
+tags:
+  - name: properties
+  - name: config
+  - name: publications
+  - name: menu
+paths:
+  '/gaia/api/public/v3/properties/{pub}/{property}':
+    get:
+      operationId: get-property
+      description: Get one property by key and publication key or wwwDomain
+      tags:
+        - properties
+      responses:
+        '200':
+          description: Return found property
+          content:
+            application/json:
+              schema:
+                '$ref': '#/components/schemas/SinglePropertyResponse'
+            application/xml:
+              schema:
+                '$ref': '#/components/schemas/SinglePropertyResponse'
+        '404':
+          description: Property by that key or wwwDomain was not found
+        '500':
+          description: Error reading properties
+      parameters:
+        - name: pub
+          in: path
+          required: true
+          description: publicationId or wwwDomain
+          schema:
+            type: string
+          examples:
+            wwwDomain:
+              value: www.dt.no
+            publicationId:
+              value: '33'
+        - name: property
+          in: path
+          required: true
+          description: property key
+          schema:
+            type: string
+          examples:
+            'xmas.decorations':
+              value: xmas.decorations
+            'magus.url':
+              value: magus.url
+            not-existent:
+              value: i.dont.exist
+  '/gaia/api/public/v3/properties/multi/{pub}/{propertyList}':
+    get:
+      description: Get a list of properties by keys and publication id or wwwDomain
+      operationId: get-property-list
+      tags:
+        - properties
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                '$ref': '#/components/schemas/PropertyListResponse'
+            application/xml:
+              schema:
+                '$ref': '#/components/schemas/PropertyListResponse'
+        '404':
+          description: property by that key or wwwDomain was not found
+        '500':
+          description: Error reading properties
+      parameters:
+        - name: pub
+          in: path
+          required: true
+          description: publication key or wwwDomain
+          schema:
+            type: string
+          examples:
+            wwwDomain:
+              value: www.dt.no
+            publicationId:
+              value: '33'
+        - name: propertyList
+          in: path
+          required: true
+          description: comma separated properties
+          schema:
+            type: string
+          examples:
+            'single property':
+              value: xmas.decorations
+            'multiple properties':
+              value: xmas.decorations,magus.url
+            'multiple properties with non existent value':
+              value: xmas.decorations,i.dont.exist,magus.url
+  '/gaia/api/public/v3/properties/global/{property}':
+    get:
+      operationId: get-global-property
+      description: Get one global property
+      tags:
+        - properties
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                '$ref': '#/components/schemas/SinglePropertyResponse'
+            application/xml:
+              schema:
+                '$ref': '#/components/schemas/SinglePropertyResponse'
+        '404':
+          description: property by that key was not found
+      parameters:
+        - name: property
+          in: path
+          required: true
+          description: property key
+          schema:
+            type: string
+          examples:
+            'xmas.decorations':
+              value: xmas.decorations
+            'magus.url':
+              value: magus.url
+            not-existent:
+              value: i.dont.exist
+  '/gaia/api/public/v3/siteconfig':
+    get:
+      operationId: get-siteconfig
+      tags:
+        - config
+      description: get all siteconfig as a list
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                '$ref': '#/components/schemas/SiteconfigResponse'
+        '500':
+          description: Errors reading siteconfig
+  '/gaia/api/public/v3/publications':
+    get:
+      tags:
+        - publications
+      operationId: get-all-publications
+      description: get all publications as a list
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                '$ref': '#/components/schemas/PublicationsResponse'
+        '500':
+          description: Errors reading publications
+  '/gaia/api/public/v3/publications/id/{publicationId}':
+    get:
+      description: get a single publication by id
+      tags:
+        - publications
+      operationId: get-publication-by-id
+      parameters:
+        - name: publicationId
+          in: path
+          required: true
+          description: publication id
+          schema:
+            type: string
+          examples:
+            'id for rubrikk.botrend.no':
+              value: '-3309294'
+            'id for www.ranablad.no':
+              value: '93'
+            not-existent:
+              value: '1000000000000000'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                '$ref': '#/components/schemas/Publication'
+        '404':
+          description: publication for id was not found
+        '500':
+          description: Errors reading publication
+  '/gaia/api/public/v3/publications/domain/{domain}':
+    get:
+      tags:
+        - publications
+      operationId: get-publication-by-domain
+      description: get a single publication by domain
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: publication domain
+          schema:
+            type: string
+          examples:
+            'domain for rubrikk.botrend.no':
+              value: rubrikk.botrend.no
+            'domain for www.ranablad.no':
+              value: www.ranablad.no
+            not-existent:
+              value: www.invalid.invalid
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                '$ref': '#/components/schemas/Publication'
+        '404':
+          description: publication for domain was not found
+        '500':
+          description: Errors reading publication
+  '/gaia/api/public/v3/files/menu/{domain}':
+    get:
+      tags:
+        - menu
+      operationId: get-menu
+      description: Get menu for domain
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          description: publication domain
+          schema:
+            type: string
+          examples:
+            'www.dt.no':
+              value: www.dt.no
+            'www.ostlendingen.no':
+              value: www.ostlendingen.no
+            'unsupported domain':
+              value: www.invalid.invalid
+      responses:
+        '200':
+          description: get a single menu information by domain
+          content:
+            application/json:
+              schema:
+                '$ref': '#/components/schemas/FileMenu'
+        '400':
+          description: publication for domain was not found
+        '500':
+          description: Errors reading publication
+components:
+  schemas:
+    FileMenu:
+      '$ref': './generated-file-menu.json#/definitions/root'
+    Publication:
+      '$ref': './generated-publication.json#/definitions/root'
+    PublicationsResponse:
+      type: array
+      description: array of all publications
+      items:
+        '$ref': '#/components/schemas/Publication'
+    SiteconfigResponse:
+      type: array
+      description: array of all siteconfig objects in amedia
+      items:
+        '$ref': './siteconfig-schema.json#/definitions/root'
+    PropertyListResponse:
+      type: array
+      description: A list of property names and values
+      items:
+        '$ref': '#/components/schemas/SinglePropertyResponse'
+    SinglePropertyResponse:
+      type: object
+      description: A property name and value
+      properties:
+        value:
+          type: string
+          description: value of the property
+        name:
+          type: string
+          description: name of the property
+        medusa:
+          type: boolean
+          description: deprecated
+        overridable:
+          type: boolean
+          description: deprecated
+      required: ['value', 'name', 'medusa', 'overridable']
+      additionalProperties: false

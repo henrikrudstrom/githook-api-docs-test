@@ -1,0 +1,612 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "recommendation": {
+      "listV1": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["DataTopListWithHashes"]
+          },
+          "position": {
+            "type": "integer"
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": ["kind", "position"],
+        "additionalProperties": false
+      },
+      "sublistV1": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["DataTopListWithHashes"]
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "size": {
+            "type": "integer"
+          }
+        },
+        "required": ["kind", "size"],
+        "additionalProperties": false
+      },
+      "staticContent": {
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "integer"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "teaserId": {
+            "type": "string"
+          }
+        },
+        "required": ["position", "teaserId"],
+        "additionalProperties": false
+      }
+    },
+    "root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "key": {
+          "type": "string",
+          "minLength": 6,
+          "maxLength": 6
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        },
+        "locale": {
+          "type": "string",
+          "enum": ["nb", "nn"]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "object",
+          "properties": {
+            "short": {
+              "type": "string"
+            },
+            "full": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["short", "full"]
+        },
+        "domains": {
+          "type": "object",
+          "properties": {
+            "main": {
+              "type": "string"
+            },
+            "aliases": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": ["main"]
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "design": {
+              "type": "string",
+              "enum": ["default", "nettavisen"]
+            },
+            "premium_design": {
+              "type": "string",
+              "enum": ["default", "nettavisen"]
+            },
+            "cms": {
+              "type": "object",
+              "properties": {
+                "frontpageSource": {
+                  "type": "object",
+                  "properties": {
+                    "desktop": {
+                      "type": "string"
+                    },
+                    "mobile": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["desktop", "mobile"]
+                },
+                "sectionSource": {
+                  "type": "string"
+                },
+                "metadataBackend": {
+                  "type": "string",
+                  "enum": ["acpsanity", "cloudordino"]
+                }
+              },
+              "additionalProperties": false,
+              "required": ["frontpageSource"]
+            },
+            "dredition": {
+              "type": "object",
+              "properties": {
+                "frontId": {
+                  "type": "string"
+                },
+                "editorialGroup": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["frontId", "editorialGroup"]
+            },
+            "escenic": {
+              "type": "object",
+              "properties": {
+                "publicationName": {
+                  "type": "string"
+                },
+                "acpPubKey": {
+                  "type": "integer"
+                },
+                "backendKey": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["publicationName", "acpPubKey", "backendKey"]
+            },
+            "analytics": {
+              "type": "object",
+              "properties": {
+                "a_virtual": {
+                  "type": "string"
+                },
+                "site_groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "benchmark_groups": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "group_key": {
+                        "type": "string"
+                      },
+                      "main_group": {
+                        "type": "boolean"
+                      },
+                      "sites": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "class": {
+                  "type": "string",
+                  "nullable": true,
+                  "enum": ["VEI0", "VEI1", "VEI2", "VEI3", "VEI4", "VEI5"]
+                },
+                "region": {
+                  "type": "string",
+                  "enum": [
+                    "Nidaros",
+                    "Vest",
+                    "Buskerud-Vestfold",
+                    "Haugalandet",
+                    "Nord",
+                    "Telemark-Agder",
+                    "Midt-Norge",
+                    "Romerike-Innlandet",
+                    "Follo-Østfold",
+                    "Nordsjø",
+                    "Nasjonal",
+                    "Test"
+                  ]
+                },
+                "amedia_owned": {
+                  "type": "boolean"
+                },
+                "local_newspaper": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["a_virtual"]
+            },
+            "title_info": {
+              "type": "object",
+              "properties": {
+                "title_code": {
+                  "type": "string",
+                  "pattern": "^[A-Z0-9]{2,}$"
+                },
+                "participates_in_plussalt": {
+                  "type": "boolean"
+                },
+                "sites": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "required": ["title_code", "sites"]
+            },
+            "aid": {
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["enabled"]
+            },
+            "linpro": {
+              "type": "object",
+              "properties": {
+                "monitored": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false,
+              "required": ["monitored"]
+            },
+            "feature": {
+              "type": "object",
+              "properties": {
+                "churn": { "type": "string", "enum": ["ab", "off"] }
+              },
+              "additionalProperties": false,
+              "required": ["churn"]
+            },
+            "secrets": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "flowplayer": {
+                  "type": "object",
+                  "properties": {
+                    "apiKey": {
+                      "type": "string"
+                    },
+                    "siteId": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["apiKey", "siteId"]
+                },
+                "sms": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "linkMobilityAccount": {
+                      "type": "object",
+                      "properties": {
+                        "platformId": {
+                          "type": "string"
+                        },
+                        "platformPartnerId": {
+                          "type": "string"
+                        },
+                        "username": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "platformId",
+                        "platformPartnerId",
+                        "username",
+                        "password",
+                        "type"
+                      ]
+                    }
+                  }
+                },
+                "nets": {
+                  "type": "object",
+                  "properties": {
+                    "md5_k1": {
+                      "type": "string"
+                    },
+                    "md5_k2": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["md5_k1", "md5_k2"]
+                },
+                "vipps": {
+                  "type": "object",
+                  "properties": {
+                    "client_secret": {
+                      "type": "string"
+                    },
+                    "subscription_key": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": ["client_secret", "subscription_key"]
+                }
+              }
+            },
+            "visiolink": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "identifier": {
+                  "type": "string"
+                }
+              }
+            },
+            "sms": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "gateway": {
+                  "type": "string"
+                }
+              }
+            },
+            "varnish": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "default_backend": {
+                  "type": "string"
+                },
+                "force_https": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "ssl": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "dnsWildcard": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "httpHost": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "edges": {
+                  "type": "array",
+                  "minItems": 0,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": ["edges"]
+            },
+            "subscription_system": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "instance": {
+                  "type": "string"
+                },
+                "title_code": {
+                  "type": "string"
+                },
+                "locked": {
+                  "type": "boolean"
+                },
+                "aria_golive_date": {
+                  "type": "string",
+                  "pattern": "^[0-9]{4}\\-[0-9]{2}\\-[0-9]{2}$"
+                },
+                "nets_params": {
+                  "additionalProperties": false,
+                  "type": "object",
+                  "properties": {
+                    "account_number": {
+                      "type": "string"
+                    },
+                    "setup_code": {
+                      "type": "string"
+                    },
+                    "merchant_id": {
+                      "type": "string"
+                    },
+                    "issuer_id": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "vipps_params": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "client_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["client_id"]
+                }
+              }
+            },
+            "apps": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "nyhetsappen": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "newspaperId": {
+                      "type": "string"
+                    },
+                    "ios": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "appId": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["appId"]
+                    },
+                    "android": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "appId": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["appId"]
+                    }
+                  },
+                  "required": ["newspaperId"]
+                }
+              }
+            },
+            "webforwards": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Possible enum ignored, as sample data included 13 distinct values on 2021-02-16."
+                  },
+                  "http_code": {
+                    "type": "integer",
+                    "description": "Minimum and maximum constraints derived from sample data on 2021-02-16.",
+                    "minimum": 301,
+                    "maximum": 301
+                  }
+                },
+                "required": ["url", "http_code"]
+              }
+            },
+            "gsuite": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "orgunit": {
+                  "type": "string"
+                },
+                "group": {
+                  "type": "string"
+                }
+              },
+              "required": ["orgunit"]
+            },
+            "recommendations": {
+              "type": "object",
+              "properties": {
+                "engineV1": {
+                  "$ref": "#/definitions/recommendation/listV1"
+                },
+                "engineSublistV1": {
+                  "$ref": "#/definitions/recommendation/sublistV1"
+                },
+                "contentmarketing": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/definitions/recommendation/listV1"
+                    },
+                    {
+                      "$ref": "#/definitions/recommendation/staticContent"
+                    }
+                  ]
+                },
+                "consumermarketing": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/definitions/recommendation/listV1"
+                    },
+                    {
+                      "$ref": "#/definitions/recommendation/staticContent"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            "chat": {
+              "type": "object",
+              "properties": {
+                "orgId": {
+                  "type": "string"
+                },
+                "orgName": {
+                  "type": "string"
+                },
+                "queueName": {
+                  "type": "string"
+                }
+              },
+              "required": ["orgId", "orgName", "queueName"]
+            }
+          },
+          "required": ["linpro", "aid", "design", "analytics"],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "key",
+        "status",
+        "locale",
+        "tags",
+        "name",
+        "domains",
+        "config"
+      ]
+    }
+  }
+}
