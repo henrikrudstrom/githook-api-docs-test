@@ -1,7 +1,7 @@
 name: 'process specs'
 description: 'generate documentation files'
 inputs:
-  spec-path:  # id of input
+  input-path:  # id of input
     description: 'path to spec root folder'
     required: true
   output-path:

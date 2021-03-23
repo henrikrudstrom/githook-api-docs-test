@@ -5,9 +5,9 @@ import dereferencedSpecs from './dereferenced-specs';
 
 (async () => {
   try {
-    const specPath = core.getInput('spec-path');
+    const inputPath = core.getInput('input-path');
     const outputPath = core.getInput('output-path');
-    await dereferencedSpecs(specPath, outputPath);
+    await dereferencedSpecs(inputPath, outputPath);
   } catch (error) {
     core.setFailed(error.message);
   }
