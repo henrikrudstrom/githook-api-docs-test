@@ -1,5 +1,4 @@
 import converter from 'widdershins';
-
 import yaml from 'yaml';
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import fg from 'fast-glob';
@@ -33,6 +32,7 @@ const convert = async (inputFile, outputFolder) => {
     const specName = spec.info.title.toLowerCase();
     const outputFile = `${outputFolder}/${specName}.html.md`;
     writeFileSync(outputFile, str);
+    console.log('markdown generated: ${outputFile}');
   } catch (err) {
     console.error(err);
   }
@@ -40,10 +40,6 @@ const convert = async (inputFile, outputFolder) => {
 
 export default async (inputPath: string, outputPath: string) => {
   const specPaths = await fg(`${inputPath}/**/*.openapi.yaml`);
-  console.log(`${inputPath}/**/*.openapi.{yaml}`);
-  console.log(specPaths);
-  console.log('outputPath ' + specPaths);
-
   if (!existsSync(outputPath)) {
     mkdirSync(outputPath, { recursive: true });
   }

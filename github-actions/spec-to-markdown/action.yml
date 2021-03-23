@@ -1,0 +1,12 @@
+name: 'spec to markdows'
+description: 'generate markdown from specs'
+inputs:
+  input-path:  # id of input
+    description: 'path to spec root folder'
+    required: true
+  output-path:
+    description: 'root path to generated files'
+    required: true
+runs:
+    using: 'node12'
+    main: './dist/index.js'

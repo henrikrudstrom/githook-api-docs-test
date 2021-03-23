@@ -1,11 +1,11 @@
 #!/usr/bin/env ts-node
 import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
-import generate from './generate';
+import markdownDocs from './markdown-docs';
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 yargs(hideBin(process.argv))
   .command(
-    '$0 <inputPath> <outputPath>',
+    '$0 <inputPath> <outputPath> <tmpPath>',
     'generate assets',
     (args) => {
       return args
@@ -21,7 +21,7 @@ yargs(hideBin(process.argv))
         });
     },
     (argv) => {
-      generate(argv.inputPath!, argv.outputPath!);
+      markdownDocs(argv.inputPath!, argv.outputPath!);
     }
   )
   .help().argv;

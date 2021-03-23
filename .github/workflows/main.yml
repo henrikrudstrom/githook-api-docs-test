@@ -5,18 +5,18 @@ jobs:
     runs-on: ubuntu-latest
     name: Generate api docs
     steps:
-      # To use this repository's private action,
-      # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Generate spec and doc files
-        uses: ./github_actions/generate_docs_action # Uses an action in the root directory
-        id: generate
+      - name: process spec files
+        uses: ./github-actions/process-specs
         with:
-          spec-path: './specifications'
+          input-path: './specifications'
           output-path: './output'
-          tmp-path: './tmp'
-
+      - name: specs to markdown
+        uses: ./github-actions/spec-to-markdown
+        with:
+          input-path: './specifications'
+          output-path: './tmp/source'
       - name: Copy doc source
         run: "mkdir -p ./tmp/source && cp -r ./source/* ./tmp/source/"
       - name: Build documentation

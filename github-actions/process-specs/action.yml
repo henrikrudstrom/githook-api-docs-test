@@ -1,4 +1,4 @@
-name: 'generate docs'
+name: 'process specs'
 description: 'generate documentation files'
 inputs:
   spec-path:  # id of input
@@ -7,9 +7,6 @@ inputs:
   output-path:
     description: 'root path to generated files'
     required: true
-  tmp-path:
-    description: 'path for intermediary files'
-    required: true
 runs:
     using: 'node12'
-    main: '../dist/index.js'
+    main: './dist/index.js'
