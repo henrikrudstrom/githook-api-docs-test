@@ -1,0 +1,4253 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Gaia v1.0.0</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-e033bdd3.js"></script>
+
+  </head>
+
+  <body class="api api_gaia" data-languages="[&quot;shell&quot;,&quot;http&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo-1e815a84.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">curl</a>
+              <a href="#" data-language-name="http">HTTP</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#gaia" class="toc-h1 toc-link" data-title="Gaia v1.0.0">Gaia v1.0.0</a>
+          </li>
+          <li>
+            <a href="#gaia-properties" class="toc-h1 toc-link" data-title="properties">properties</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-property" class="toc-h2 toc-link" data-title="get-property">get-property</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#you-can-also-use-wget" class="toc-h1 toc-link" data-title="You can also use wget">You can also use wget</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-property-parameters" class="toc-h2 toc-link" data-title="Parameters">Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#get-property-responses" class="toc-h2 toc-link" data-title="Responses">Responses</a>
+                  </li>
+                  <li>
+                    <a href="#get-property-list" class="toc-h2 toc-link" data-title="get-property-list">get-property-list</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#you-can-also-use-wget-2" class="toc-h1 toc-link" data-title="You can also use wget">You can also use wget</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-property-list-parameters" class="toc-h2 toc-link" data-title="Parameters">Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#get-property-list-responses" class="toc-h2 toc-link" data-title="Responses">Responses</a>
+                  </li>
+                  <li>
+                    <a href="#get-global-property" class="toc-h2 toc-link" data-title="get-global-property">get-global-property</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#you-can-also-use-wget-3" class="toc-h1 toc-link" data-title="You can also use wget">You can also use wget</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-global-property-parameters" class="toc-h2 toc-link" data-title="Parameters">Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#get-global-property-responses" class="toc-h2 toc-link" data-title="Responses">Responses</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#gaia-config" class="toc-h1 toc-link" data-title="config">config</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-siteconfig" class="toc-h2 toc-link" data-title="get-siteconfig">get-siteconfig</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#you-can-also-use-wget-4" class="toc-h1 toc-link" data-title="You can also use wget">You can also use wget</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-siteconfig-responses" class="toc-h2 toc-link" data-title="Responses">Responses</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#gaia-publications" class="toc-h1 toc-link" data-title="publications">publications</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-publications" class="toc-h2 toc-link" data-title="get-all-publications">get-all-publications</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#you-can-also-use-wget-5" class="toc-h1 toc-link" data-title="You can also use wget">You can also use wget</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-publications-responses" class="toc-h2 toc-link" data-title="Responses">Responses</a>
+                  </li>
+                  <li>
+                    <a href="#get-publication-by-id" class="toc-h2 toc-link" data-title="get-publication-by-id">get-publication-by-id</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#you-can-also-use-wget-6" class="toc-h1 toc-link" data-title="You can also use wget">You can also use wget</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-publication-by-id-parameters" class="toc-h2 toc-link" data-title="Parameters">Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#get-publication-by-id-responses" class="toc-h2 toc-link" data-title="Responses">Responses</a>
+                  </li>
+                  <li>
+                    <a href="#get-publication-by-domain" class="toc-h2 toc-link" data-title="get-publication-by-domain">get-publication-by-domain</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#you-can-also-use-wget-7" class="toc-h1 toc-link" data-title="You can also use wget">You can also use wget</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-publication-by-domain-parameters" class="toc-h2 toc-link" data-title="Parameters">Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#get-publication-by-domain-responses" class="toc-h2 toc-link" data-title="Responses">Responses</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#gaia-menu" class="toc-h1 toc-link" data-title="menu">menu</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-menu" class="toc-h2 toc-link" data-title="get-menu">get-menu</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#you-can-also-use-wget-8" class="toc-h1 toc-link" data-title="You can also use wget">You can also use wget</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-menu-parameters" class="toc-h2 toc-link" data-title="Parameters">Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#get-menu-responses" class="toc-h2 toc-link" data-title="Responses">Responses</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#tocS_FileMenu" class="toc-h2 toc-link" data-title="FileMenu">FileMenu</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_Publication" class="toc-h2 toc-link" data-title="Publication">Publication</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_PublicationsResponse" class="toc-h2 toc-link" data-title="PublicationsResponse">PublicationsResponse</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_SiteconfigResponse" class="toc-h2 toc-link" data-title="SiteconfigResponse">SiteconfigResponse</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_PropertyListResponse" class="toc-h2 toc-link" data-title="PropertyListResponse">PropertyListResponse</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_SinglePropertyResponse" class="toc-h2 toc-link" data-title="SinglePropertyResponse">SinglePropertyResponse</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <!-- Generator: Widdershins v4.0.1 -->
+
+<h1 id="gaia">Gaia v1.0.0</h1>
+
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
+Gaia configuration server</p>
+</blockquote>
+
+<p>Base URLs:</p>
+
+<ul>
+<li><a href="http://services.snap0.api.no">http://services.snap0.api.no</a></li>
+</ul>
+
+<p>Web: <a href="https://github.com/amedia/gaia/">Support</a> </p>
+
+<h1 id="gaia-properties">properties</h1>
+<h2 id='get-property'>get-property</h2>
+<p><a id="opIdget-property"></a></p>
+
+<blockquote>
+<p>Code samples
+```shell</p>
+<h1 id='you-can-also-use-wget'>You can also use wget</h1>
+<p>curl -X GET http://services.snap0.api.no/gaia/api/public/v3/properties/{pub}/{property} \
+  -H &#39;Accept: application/json&#39;
+```</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://services.snap0.api.no/gaia/api/public/v3/properties/{pub}/{property}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">services.snap0.api.no</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre></div>
+<p><code>GET /gaia/api/public/v3/properties/{pub}/{property}</code></p>
+
+<p>Get one property by key and publication key or wwwDomain</p>
+
+<h3 id="get-property-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pub</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>publicationId or wwwDomain</td>
+</tr>
+<tr>
+<td>property</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>property key</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses
+200 Response
+<code>json
+{
+  &quot;value&quot;: &quot;string&quot;,
+  &quot;name&quot;: &quot;string&quot;,
+  &quot;medusa&quot;: true,
+  &quot;overridable&quot;: true
+}
+</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="nt">&lt;SinglePropertyResponse&gt;</span>
+  <span class="nt">&lt;value&gt;</span>string<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;name&gt;</span>string<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;medusa&gt;</span>true<span class="nt">&lt;/medusa&gt;</span>
+  <span class="nt">&lt;overridable&gt;</span>true<span class="nt">&lt;/overridable&gt;</span>
+<span class="nt">&lt;/SinglePropertyResponse&gt;</span>
+</code></pre></div>
+<h3 id="get-property-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Return found property</td>
+<td><a href="#schemasinglepropertyresponse">SinglePropertyResponse</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Property by that key or wwwDomain was not found</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Error reading properties</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id='get-property-list'>get-property-list</h2>
+<p><a id="opIdget-property-list"></a></p>
+
+<blockquote>
+<p>Code samples
+```shell</p>
+<h1 id='you-can-also-use-wget-2'>You can also use wget</h1>
+<p>curl -X GET http://services.snap0.api.no/gaia/api/public/v3/properties/multi/{pub}/{propertyList} \
+  -H &#39;Accept: application/json&#39;
+```</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://services.snap0.api.no/gaia/api/public/v3/properties/multi/{pub}/{propertyList}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">services.snap0.api.no</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre></div>
+<p><code>GET /gaia/api/public/v3/properties/multi/{pub}/{propertyList}</code></p>
+
+<p>Get a list of properties by keys and publication id or wwwDomain</p>
+
+<h3 id="get-property-list-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pub</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>publication key or wwwDomain</td>
+</tr>
+<tr>
+<td>propertyList</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>comma separated properties</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses
+200 Response
+<code>json
+[
+  {
+    &quot;value&quot;: &quot;string&quot;,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;medusa&quot;: true,
+    &quot;overridable&quot;: true
+  }
+]
+</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="nt">&lt;PropertyListResponse&gt;</span>
+  <span class="nt">&lt;value&gt;</span>string<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;name&gt;</span>string<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;medusa&gt;</span>true<span class="nt">&lt;/medusa&gt;</span>
+  <span class="nt">&lt;overridable&gt;</span>true<span class="nt">&lt;/overridable&gt;</span>
+<span class="nt">&lt;/PropertyListResponse&gt;</span>
+</code></pre></div>
+<h3 id="get-property-list-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemapropertylistresponse">PropertyListResponse</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>property by that key or wwwDomain was not found</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Error reading properties</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id='get-global-property'>get-global-property</h2>
+<p><a id="opIdget-global-property"></a></p>
+
+<blockquote>
+<p>Code samples
+```shell</p>
+<h1 id='you-can-also-use-wget-3'>You can also use wget</h1>
+<p>curl -X GET http://services.snap0.api.no/gaia/api/public/v3/properties/global/{property} \
+  -H &#39;Accept: application/json&#39;
+```</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://services.snap0.api.no/gaia/api/public/v3/properties/global/{property}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">services.snap0.api.no</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre></div>
+<p><code>GET /gaia/api/public/v3/properties/global/{property}</code></p>
+
+<p>Get one global property</p>
+
+<h3 id="get-global-property-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>property</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>property key</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses
+200 Response
+<code>json
+{
+  &quot;value&quot;: &quot;string&quot;,
+  &quot;name&quot;: &quot;string&quot;,
+  &quot;medusa&quot;: true,
+  &quot;overridable&quot;: true
+}
+</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="nt">&lt;SinglePropertyResponse&gt;</span>
+  <span class="nt">&lt;value&gt;</span>string<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;name&gt;</span>string<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;medusa&gt;</span>true<span class="nt">&lt;/medusa&gt;</span>
+  <span class="nt">&lt;overridable&gt;</span>true<span class="nt">&lt;/overridable&gt;</span>
+<span class="nt">&lt;/SinglePropertyResponse&gt;</span>
+</code></pre></div>
+<h3 id="get-global-property-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemasinglepropertyresponse">SinglePropertyResponse</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>property by that key was not found</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="gaia-config">config</h1>
+<h2 id='get-siteconfig'>get-siteconfig</h2>
+<p><a id="opIdget-siteconfig"></a></p>
+
+<blockquote>
+<p>Code samples
+```shell</p>
+<h1 id='you-can-also-use-wget-4'>You can also use wget</h1>
+<p>curl -X GET http://services.snap0.api.no/gaia/api/public/v3/siteconfig \
+  -H &#39;Accept: application/json&#39;
+```</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://services.snap0.api.no/gaia/api/public/v3/siteconfig</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">services.snap0.api.no</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre></div>
+<p><code>GET /gaia/api/public/v3/siteconfig</code></p>
+
+<p>get all siteconfig as a list</p>
+
+<blockquote>
+<p>Example responses
+200 Response
+<code>json
+[
+  {
+    &quot;id&quot;: 0,
+    &quot;key&quot;: &quot;string&quot;,
+    &quot;status&quot;: &quot;active&quot;,
+    &quot;locale&quot;: &quot;nb&quot;,
+    &quot;tags&quot;: [
+      &quot;string&quot;
+    ],
+    &quot;name&quot;: {
+      &quot;short&quot;: &quot;string&quot;,
+      &quot;full&quot;: &quot;string&quot;
+    },
+    &quot;domains&quot;: {
+      &quot;main&quot;: &quot;string&quot;,
+      &quot;aliases&quot;: [
+        &quot;string&quot;
+      ]
+    },
+    &quot;config&quot;: {
+      &quot;design&quot;: &quot;default&quot;,
+      &quot;premium_design&quot;: &quot;default&quot;,
+      &quot;cms&quot;: {
+        &quot;frontpageSource&quot;: {
+          &quot;desktop&quot;: &quot;string&quot;,
+          &quot;mobile&quot;: &quot;string&quot;
+        },
+        &quot;sectionSource&quot;: &quot;string&quot;,
+        &quot;metadataBackend&quot;: &quot;acpsanity&quot;
+      },
+      &quot;dredition&quot;: {
+        &quot;frontId&quot;: &quot;string&quot;,
+        &quot;editorialGroup&quot;: &quot;string&quot;
+      },
+      &quot;escenic&quot;: {
+        &quot;publicationName&quot;: &quot;string&quot;,
+        &quot;acpPubKey&quot;: 0,
+        &quot;backendKey&quot;: &quot;string&quot;
+      },
+      &quot;analytics&quot;: {
+        &quot;a_virtual&quot;: &quot;string&quot;,
+        &quot;site_groups&quot;: [
+          {
+            &quot;benchmark_groups&quot;: [
+              &quot;string&quot;
+            ],
+            &quot;group_key&quot;: &quot;string&quot;,
+            &quot;main_group&quot;: true,
+            &quot;sites&quot;: [
+              &quot;string&quot;
+            ]
+          }
+        ],
+        &quot;class&quot;: &quot;VEI0&quot;,
+        &quot;region&quot;: &quot;Nidaros&quot;,
+        &quot;amedia_owned&quot;: true,
+        &quot;local_newspaper&quot;: true
+      },
+      &quot;title_info&quot;: {
+        &quot;title_code&quot;: &quot;string&quot;,
+        &quot;participates_in_plussalt&quot;: true,
+        &quot;sites&quot;: [
+          &quot;string&quot;
+        ]
+      },
+      &quot;aid&quot;: {
+        &quot;enabled&quot;: true
+      },
+      &quot;linpro&quot;: {
+        &quot;monitored&quot;: true
+      },
+      &quot;feature&quot;: {
+        &quot;churn&quot;: &quot;ab&quot;
+      },
+      &quot;secrets&quot;: {
+        &quot;flowplayer&quot;: {
+          &quot;apiKey&quot;: &quot;string&quot;,
+          &quot;siteId&quot;: &quot;string&quot;
+        },
+        &quot;sms&quot;: {
+          &quot;linkMobilityAccount&quot;: {
+            &quot;platformId&quot;: &quot;string&quot;,
+            &quot;platformPartnerId&quot;: &quot;string&quot;,
+            &quot;username&quot;: &quot;string&quot;,
+            &quot;password&quot;: &quot;string&quot;,
+            &quot;type&quot;: &quot;string&quot;
+          }
+        },
+        &quot;nets&quot;: {
+          &quot;md5_k1&quot;: &quot;string&quot;,
+          &quot;md5_k2&quot;: &quot;string&quot;
+        },
+        &quot;vipps&quot;: {
+          &quot;client_secret&quot;: &quot;string&quot;,
+          &quot;subscription_key&quot;: &quot;string&quot;
+        }
+      },
+      &quot;visiolink&quot;: {
+        &quot;identifier&quot;: &quot;string&quot;
+      },
+      &quot;sms&quot;: {
+        &quot;gateway&quot;: &quot;string&quot;
+      },
+      &quot;varnish&quot;: {
+        &quot;default_backend&quot;: &quot;string&quot;,
+        &quot;force_https&quot;: true
+      },
+      &quot;ssl&quot;: {
+        &quot;dnsWildcard&quot;: [
+          &quot;string&quot;
+        ],
+        &quot;httpHost&quot;: [
+          &quot;string&quot;
+        ],
+        &quot;edges&quot;: [
+          &quot;string&quot;
+        ]
+      },
+      &quot;subscription_system&quot;: {
+        &quot;type&quot;: &quot;string&quot;,
+        &quot;instance&quot;: &quot;string&quot;,
+        &quot;title_code&quot;: &quot;string&quot;,
+        &quot;locked&quot;: true,
+        &quot;aria_golive_date&quot;: &quot;string&quot;,
+        &quot;nets_params&quot;: {
+          &quot;account_number&quot;: &quot;string&quot;,
+          &quot;setup_code&quot;: &quot;string&quot;,
+          &quot;merchant_id&quot;: &quot;string&quot;,
+          &quot;issuer_id&quot;: &quot;string&quot;
+        },
+        &quot;vipps_params&quot;: {
+          &quot;client_id&quot;: &quot;string&quot;
+        }
+      },
+      &quot;apps&quot;: {
+        &quot;nyhetsappen&quot;: {
+          &quot;newspaperId&quot;: &quot;string&quot;,
+          &quot;ios&quot;: {
+            &quot;appId&quot;: &quot;string&quot;
+          },
+          &quot;android&quot;: {
+            &quot;appId&quot;: &quot;string&quot;
+          }
+        }
+      },
+      &quot;webforwards&quot;: {
+        &quot;property1&quot;: {
+          &quot;url&quot;: &quot;string&quot;,
+          &quot;http_code&quot;: 301
+        },
+        &quot;property2&quot;: {
+          &quot;url&quot;: &quot;string&quot;,
+          &quot;http_code&quot;: 301
+        }
+      },
+      &quot;gsuite&quot;: {
+        &quot;orgunit&quot;: &quot;string&quot;,
+        &quot;group&quot;: &quot;string&quot;
+      },
+      &quot;recommendations&quot;: {
+        &quot;engineV1&quot;: {
+          &quot;kind&quot;: &quot;DataTopListWithHashes&quot;,
+          &quot;position&quot;: 0,
+          &quot;disabled&quot;: true
+        },
+        &quot;engineSublistV1&quot;: {
+          &quot;kind&quot;: &quot;DataTopListWithHashes&quot;,
+          &quot;disabled&quot;: true,
+          &quot;size&quot;: 0
+        },
+        &quot;contentmarketing&quot;: {
+          &quot;kind&quot;: &quot;DataTopListWithHashes&quot;,
+          &quot;position&quot;: 0,
+          &quot;disabled&quot;: true
+        },
+        &quot;consumermarketing&quot;: {
+          &quot;kind&quot;: &quot;DataTopListWithHashes&quot;,
+          &quot;position&quot;: 0,
+          &quot;disabled&quot;: true
+        }
+      },
+      &quot;chat&quot;: {
+        &quot;orgId&quot;: &quot;string&quot;,
+        &quot;orgName&quot;: &quot;string&quot;,
+        &quot;queueName&quot;: &quot;string&quot;
+      }
+    }
+  }
+]
+</code></p>
+</blockquote>
+
+<h3 id="get-siteconfig-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemasiteconfigresponse">SiteconfigResponse</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Errors reading siteconfig</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="gaia-publications">publications</h1>
+<h2 id='get-all-publications'>get-all-publications</h2>
+<p><a id="opIdget-all-publications"></a></p>
+
+<blockquote>
+<p>Code samples
+```shell</p>
+<h1 id='you-can-also-use-wget-5'>You can also use wget</h1>
+<p>curl -X GET http://services.snap0.api.no/gaia/api/public/v3/publications \
+  -H &#39;Accept: application/json&#39;
+```</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://services.snap0.api.no/gaia/api/public/v3/publications</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">services.snap0.api.no</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre></div>
+<p><code>GET /gaia/api/public/v3/publications</code></p>
+
+<p>get all publications as a list</p>
+
+<blockquote>
+<p>Example responses
+200 Response
+<code>json
+[
+  {
+    &quot;ece5PublicationName&quot;: &quot;string&quot;,
+    &quot;ece5AcpPubKey&quot;: 0,
+    &quot;domainAliases&quot;: &quot;string&quot;,
+    &quot;cms&quot;: &quot;-&quot;,
+    &quot;medusaFlag&quot;: 0,
+    &quot;ece5BackendKey&quot;: &quot;string&quot;,
+    &quot;escenic&quot;: true,
+    &quot;displayName&quot;: &quot;string&quot;,
+    &quot;mobDomain&quot;: &quot;string&quot;,
+    &quot;nedstatCode&quot;: &quot;string&quot;,
+    &quot;id&quot;: -3309294,
+    &quot;fullDisplayName&quot;: &quot;string&quot;,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;apayEnabled&quot;: true,
+    &quot;escenicFlag&quot;: 0,
+    &quot;wwwDomain&quot;: &quot;string&quot;,
+    &quot;medusa&quot;: true
+  }
+]
+</code></p>
+</blockquote>
+
+<h3 id="get-all-publications-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemapublicationsresponse">PublicationsResponse</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Errors reading publications</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id='get-publication-by-id'>get-publication-by-id</h2>
+<p><a id="opIdget-publication-by-id"></a></p>
+
+<blockquote>
+<p>Code samples
+```shell</p>
+<h1 id='you-can-also-use-wget-6'>You can also use wget</h1>
+<p>curl -X GET http://services.snap0.api.no/gaia/api/public/v3/publications/id/{publicationId} \
+  -H &#39;Accept: application/json&#39;
+```</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://services.snap0.api.no/gaia/api/public/v3/publications/id/{publicationId}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">services.snap0.api.no</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre></div>
+<p><code>GET /gaia/api/public/v3/publications/id/{publicationId}</code></p>
+
+<p>get a single publication by id</p>
+
+<h3 id="get-publication-by-id-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>publicationId</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>publication id</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses
+200 Response
+<code>json
+{
+  &quot;ece5PublicationName&quot;: &quot;string&quot;,
+  &quot;ece5AcpPubKey&quot;: 0,
+  &quot;domainAliases&quot;: &quot;string&quot;,
+  &quot;cms&quot;: &quot;-&quot;,
+  &quot;medusaFlag&quot;: 0,
+  &quot;ece5BackendKey&quot;: &quot;string&quot;,
+  &quot;escenic&quot;: true,
+  &quot;displayName&quot;: &quot;string&quot;,
+  &quot;mobDomain&quot;: &quot;string&quot;,
+  &quot;nedstatCode&quot;: &quot;string&quot;,
+  &quot;id&quot;: -3309294,
+  &quot;fullDisplayName&quot;: &quot;string&quot;,
+  &quot;name&quot;: &quot;string&quot;,
+  &quot;apayEnabled&quot;: true,
+  &quot;escenicFlag&quot;: 0,
+  &quot;wwwDomain&quot;: &quot;string&quot;,
+  &quot;medusa&quot;: true
+}
+</code></p>
+</blockquote>
+
+<h3 id="get-publication-by-id-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemapublication">Publication</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>publication for id was not found</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Errors reading publication</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id='get-publication-by-domain'>get-publication-by-domain</h2>
+<p><a id="opIdget-publication-by-domain"></a></p>
+
+<blockquote>
+<p>Code samples
+```shell</p>
+<h1 id='you-can-also-use-wget-7'>You can also use wget</h1>
+<p>curl -X GET http://services.snap0.api.no/gaia/api/public/v3/publications/domain/{domain} \
+  -H &#39;Accept: application/json&#39;
+```</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://services.snap0.api.no/gaia/api/public/v3/publications/domain/{domain}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">services.snap0.api.no</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre></div>
+<p><code>GET /gaia/api/public/v3/publications/domain/{domain}</code></p>
+
+<p>get a single publication by domain</p>
+
+<h3 id="get-publication-by-domain-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>publication domain</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses
+200 Response
+<code>json
+{
+  &quot;ece5PublicationName&quot;: &quot;string&quot;,
+  &quot;ece5AcpPubKey&quot;: 0,
+  &quot;domainAliases&quot;: &quot;string&quot;,
+  &quot;cms&quot;: &quot;-&quot;,
+  &quot;medusaFlag&quot;: 0,
+  &quot;ece5BackendKey&quot;: &quot;string&quot;,
+  &quot;escenic&quot;: true,
+  &quot;displayName&quot;: &quot;string&quot;,
+  &quot;mobDomain&quot;: &quot;string&quot;,
+  &quot;nedstatCode&quot;: &quot;string&quot;,
+  &quot;id&quot;: -3309294,
+  &quot;fullDisplayName&quot;: &quot;string&quot;,
+  &quot;name&quot;: &quot;string&quot;,
+  &quot;apayEnabled&quot;: true,
+  &quot;escenicFlag&quot;: 0,
+  &quot;wwwDomain&quot;: &quot;string&quot;,
+  &quot;medusa&quot;: true
+}
+</code></p>
+</blockquote>
+
+<h3 id="get-publication-by-domain-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemapublication">Publication</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>publication for domain was not found</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Errors reading publication</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="gaia-menu">menu</h1>
+<h2 id='get-menu'>get-menu</h2>
+<p><a id="opIdget-menu"></a></p>
+
+<blockquote>
+<p>Code samples
+```shell</p>
+<h1 id='you-can-also-use-wget-8'>You can also use wget</h1>
+<p>curl -X GET http://services.snap0.api.no/gaia/api/public/v3/files/menu/{domain} \
+  -H &#39;Accept: application/json&#39;
+```</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://services.snap0.api.no/gaia/api/public/v3/files/menu/{domain}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">services.snap0.api.no</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre></div>
+<p><code>GET /gaia/api/public/v3/files/menu/{domain}</code></p>
+
+<p>Get menu for domain</p>
+
+<h3 id="get-menu-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>publication domain</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses
+200 Response
+<code>json
+{
+  &quot;topics&quot;: {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;&quot;,
+    &quot;elements&quot;: [
+      {
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;target&quot;: &quot;&quot;,
+        &quot;channel&quot;: &quot;desktop&quot;
+      }
+    ]
+  },
+  &quot;tags&quot;: {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;&quot;,
+    &quot;elements&quot;: [
+      {
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;target&quot;: &quot;&quot;,
+        &quot;channel&quot;: &quot;desktop&quot;
+      }
+    ]
+  },
+  &quot;customerService&quot;: {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;&quot;,
+    &quot;elements&quot;: [
+      {
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;target&quot;: &quot;&quot;,
+        &quot;channel&quot;: null
+      }
+    ]
+  },
+  &quot;otherTitles&quot;: {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;&quot;,
+    &quot;elements&quot;: [
+      {
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;target&quot;: &quot;&quot;,
+        &quot;channel&quot;: null
+      }
+    ]
+  },
+  &quot;categories&quot;: [
+    {
+      &quot;id&quot;: &quot;topics&quot;,
+      &quot;title&quot;: &quot;string&quot;,
+      &quot;elements&quot;: [
+        {
+          &quot;href&quot;: &quot;string&quot;,
+          &quot;name&quot;: &quot;string&quot;,
+          &quot;target&quot;: &quot;string&quot;,
+          &quot;channel&quot;: &quot;desktop&quot;
+        }
+      ]
+    }
+  ],
+  &quot;name&quot;: &quot;topmenu&quot;,
+  &quot;atoZ&quot;: {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;&quot;,
+    &quot;elements&quot;: [
+      {
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;target&quot;: &quot;&quot;,
+        &quot;channel&quot;: &quot;desktop&quot;
+      }
+    ]
+  },
+  &quot;tipUs&quot;: {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;&quot;,
+    &quot;elements&quot;: [
+      {
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;target&quot;: &quot;&quot;,
+        &quot;channel&quot;: &quot;mobile&quot;
+      }
+    ]
+  },
+  &quot;follow&quot;: {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;&quot;,
+    &quot;elements&quot;: [
+      {
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;Følg oss på Facebook&quot;,
+        &quot;target&quot;: &quot;&quot;,
+        &quot;channel&quot;: null
+      }
+    ]
+  },
+  &quot;challengeTops&quot;: [
+    {
+      &quot;image&quot;: {
+        &quot;src&quot;: &quot;string&quot;,
+        &quot;alt&quot;: &quot;&quot;
+      },
+      &quot;id&quot;: &quot;noaccess&quot;,
+      &quot;href&quot;: &quot;string&quot;,
+      &quot;mainText&quot;: &quot;string&quot;,
+      &quot;subText&quot;: &quot;string&quot;
+    }
+  ],
+  &quot;share&quot;: {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;title&quot;: &quot;&quot;,
+    &quot;elements&quot;: [
+      {
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;target&quot;: &quot;&quot;,
+        &quot;channel&quot;: null
+      }
+    ]
+  }
+}
+</code></p>
+</blockquote>
+
+<h3 id="get-menu-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>get a single menu information by domain</td>
+<td><a href="#schemafilemenu">FileMenu</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>publication for domain was not found</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Errors reading publication</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h1 id='schemas'>Schemas</h1>
+<h2 id="tocS_FileMenu">FileMenu</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemafilemenu"></a>
+<a id="schema_FileMenu"></a>
+<a id="tocSfilemenu"></a>
+<a id="tocsfilemenu"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"topics"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desktop"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desktop"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"customerService"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"otherTitles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"topics"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desktop"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"topmenu"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"atoZ"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desktop"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"tipUs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mobile"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"follow"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Følg oss på Facebook"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"challengeTops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"noaccess"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mainText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"share"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"elements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Menu structure for header menu in web, deprecated</p>
+<h3 id='properties'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>topics</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» title</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» elements</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» href</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 302 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 246 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» target</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» channel</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» title</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» elements</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» href</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 354 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 218 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» target</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» channel</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>customerService</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» title</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» elements</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» href</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 241 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 222 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» target</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» channel</td>
+<td>any</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>otherTitles</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» title</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» elements</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» href</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 71 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 68 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» target</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» channel</td>
+<td>any</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» title</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 37 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» elements</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» href</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 1862 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 1454 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» target</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 14 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» channel</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>atoZ</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» title</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» elements</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» href</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 949 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 623 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» target</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» channel</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>tipUs</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» title</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» elements</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» href</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 31 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 301 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» target</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» channel</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>follow</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» title</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» elements</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» href</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 202 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» target</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» channel</td>
+<td>any</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>challengeTops</td>
+<td>[object]¦null</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» image</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» src</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 13 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» alt</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» href</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 205 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» mainText</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 28 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» subText</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 25 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>share</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» title</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>» elements</td>
+<td>[object]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» href</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 39 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 33 distinct values on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» target</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-17.</td>
+</tr>
+<tr>
+<td>»» channel</td>
+<td>any</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>topics</td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>Lokale sider</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Aktuelle tema</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Aktuelt</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Leter du etter dette?</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Aktuelle temaer</td>
+</tr>
+<tr>
+<td>target</td>
+<td></td>
+</tr>
+<tr>
+<td>channel</td>
+<td>desktop</td>
+</tr>
+<tr>
+<td>id</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>tags</td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>Toppmeny</td>
+</tr>
+<tr>
+<td>target</td>
+<td></td>
+</tr>
+<tr>
+<td>channel</td>
+<td>desktop</td>
+</tr>
+<tr>
+<td>id</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>customerservice</td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>Kundesenter</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Kundeservice2</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Kundeservice</td>
+</tr>
+<tr>
+<td>target</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td>customerservicetlf</td>
+</tr>
+<tr>
+<td>id</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>othertitles</td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>SAMARBEIDENDE AVISER</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Våre andre aviser</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Våre andre nettstader</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Amedias Aviser i Telemark og Agder</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Amedias aviser i Telemark og Agder</td>
+</tr>
+<tr>
+<td>target</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>topics</td>
+</tr>
+<tr>
+<td>id</td>
+<td>tipus</td>
+</tr>
+<tr>
+<td>id</td>
+<td>tags</td>
+</tr>
+<tr>
+<td>id</td>
+<td>othertitles</td>
+</tr>
+<tr>
+<td>id</td>
+<td>follow</td>
+</tr>
+<tr>
+<td>id</td>
+<td>customerservice</td>
+</tr>
+<tr>
+<td>id</td>
+<td>share</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>desktop</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>mobile</td>
+</tr>
+<tr>
+<td>name</td>
+<td>topmenu</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Påskenøtter</td>
+</tr>
+<tr>
+<td>id</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td></td>
+</tr>
+<tr>
+<td>channel</td>
+<td>desktop</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>mobile</td>
+</tr>
+<tr>
+<td>id</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>tipus</td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>Tips oss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Tips oss:</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Tips</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Kontakt oss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Kontakt oss!</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Tips redaksjonen</td>
+</tr>
+<tr>
+<td>target</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td>tipemail</td>
+</tr>
+<tr>
+<td>target</td>
+<td>tipsms</td>
+</tr>
+<tr>
+<td>target</td>
+<td>tiplink</td>
+</tr>
+<tr>
+<td>target</td>
+<td>tiptlf</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>mobile</td>
+</tr>
+<tr>
+<td>id</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>follow</td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>Følg oss</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Følg oss!</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Følg oss på:</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Følg oss på Facebook</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Følg oss på Instagram</td>
+</tr>
+<tr>
+<td>name</td>
+<td>twitter</td>
+</tr>
+<tr>
+<td>name</td>
+<td>instagram</td>
+</tr>
+<tr>
+<td>name</td>
+<td>facebook</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Snapchat</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Twitter</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Podkast</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Facebook</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Instagram</td>
+</tr>
+<tr>
+<td>target</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td>twitter</td>
+</tr>
+<tr>
+<td>target</td>
+<td>instagram</td>
+</tr>
+<tr>
+<td>target</td>
+<td>facebook</td>
+</tr>
+<tr>
+<td>alt</td>
+<td></td>
+</tr>
+<tr>
+<td>alt</td>
+<td>Julekalender 2017</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>Les meir</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>Les mer</td>
+</tr>
+<tr>
+<td>id</td>
+<td>noaccess</td>
+</tr>
+<tr>
+<td>id</td>
+<td>access</td>
+</tr>
+<tr>
+<td>id</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>id</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>share</td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>Del</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Del med oss</td>
+</tr>
+<tr>
+<td>target</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td>videoupload</td>
+</tr>
+<tr>
+<td>target</td>
+<td>sendgreet</td>
+</tr>
+<tr>
+<td>target</td>
+<td>writeletter</td>
+</tr>
+<tr>
+<td>target</td>
+<td>uploadimage</td>
+</tr>
+<tr>
+<td>target</td>
+<td>addevent</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_Publication">Publication</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemapublication"></a>
+<a id="schema_Publication"></a>
+<a id="tocSpublication"></a>
+<a id="tocspublication"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"ece5PublicationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ece5AcpPubKey"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"domainAliases"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"medusaFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ece5BackendKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"escenic"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mobDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"nedstatCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3309294</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fullDisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"apayEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"escenicFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wwwDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"medusa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>info about publication</p>
+<h3 id='properties-2'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ece5PublicationName</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 121 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>ece5AcpPubKey</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>Minimum and maximum constraints derived from sample data on 2021-02-16.</td>
+</tr>
+<tr>
+<td>domainAliases</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 16 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>cms</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Enum derived from sample data on 2021-02-16.</td>
+</tr>
+<tr>
+<td>medusaFlag</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>Minimum and maximum constraints derived from sample data on 2021-02-16.</td>
+</tr>
+<tr>
+<td>ece5BackendKey</td>
+<td>string¦null</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 121 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>escenic</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 202 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>mobDomain</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 138 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>nedstatCode</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 166 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>Minimum and maximum constraints derived from sample data on 2021-02-16.</td>
+</tr>
+<tr>
+<td>fullDisplayName</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 208 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 210 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>apayEnabled</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>escenicFlag</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>Minimum and maximum constraints derived from sample data on 2021-02-16.</td>
+</tr>
+<tr>
+<td>wwwDomain</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 210 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>medusa</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-2'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cms</td>
+<td>-</td>
+</tr>
+<tr>
+<td>cms</td>
+<td>ece5</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_PublicationsResponse">PublicationsResponse</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemapublicationsresponse"></a>
+<a id="schema_PublicationsResponse"></a>
+<a id="tocSpublicationsresponse"></a>
+<a id="tocspublicationsresponse"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ece5PublicationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ece5AcpPubKey"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domainAliases"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"medusaFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ece5BackendKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"escenic"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mobDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nedstatCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-3309294</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fullDisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"apayEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"escenicFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wwwDomain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"medusa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>array of all publications</p>
+<h3 id='properties-3'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><em>anonymous</em></td>
+<td>[<a href="#schemapublication">Publication</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>array of all publications</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_SiteconfigResponse">SiteconfigResponse</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemasiteconfigresponse"></a>
+<a id="schema_SiteconfigResponse"></a>
+<a id="tocSsiteconfigresponse"></a>
+<a id="tocssiteconfigresponse"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nb"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"short"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"full"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"aliases"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"design"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"premium_design"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cms"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"frontpageSource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"sectionSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"metadataBackend"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acpsanity"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"dredition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"frontId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"editorialGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"escenic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"publicationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"acpPubKey"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"backendKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"analytics"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"a_virtual"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"site_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"benchmark_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"string"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"group_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"main_group"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sites"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"string"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VEI0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nidaros"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amedia_owned"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"local_newspaper"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"title_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"participates_in_plussalt"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sites"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"aid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"linpro"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"monitored"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"feature"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"churn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ab"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"secrets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"flowplayer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"siteId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"linkMobilityAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"platformId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"platformPartnerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"nets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"md5_k1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"md5_k2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"vipps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"client_secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"subscription_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"visiolink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"sms"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"varnish"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"default_backend"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"force_https"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"ssl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"dnsWildcard"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"httpHost"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"edges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"subscription_system"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"aria_golive_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"nets_params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"setup_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"issuer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"vipps_params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"apps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"nyhetsappen"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"newspaperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"ios"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"android"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"webforwards"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"property1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">301</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"property2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">301</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"gsuite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"orgunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"recommendations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"engineV1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DataTopListWithHashes"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"engineSublistV1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DataTopListWithHashes"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"contentmarketing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DataTopListWithHashes"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"consumermarketing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DataTopListWithHashes"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"chat"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"orgId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"orgName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"queueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>array of all siteconfig objects in amedia</p>
+<h3 id='properties-4'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>[string]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>name</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» short</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» full</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>domains</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» main</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» aliases</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>config</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» design</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» premium_design</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» cms</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» frontpageSource</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» desktop</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» mobile</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» sectionSource</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» metadataBackend</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» dredition</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» frontId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» editorialGroup</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» escenic</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» publicationName</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» acpPubKey</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» backendKey</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» analytics</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» a_virtual</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» site_groups</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» benchmark_groups</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» group_key</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» main_group</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» sites</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» class</td>
+<td>string¦null</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» region</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» amedia_owned</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» local_newspaper</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» title_info</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» title_code</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» participates_in_plussalt</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» sites</td>
+<td>[string]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» aid</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» enabled</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» linpro</td>
+<td>object</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» monitored</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» feature</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» churn</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» secrets</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» flowplayer</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» apiKey</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» siteId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» sms</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» linkMobilityAccount</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» platformId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» platformPartnerId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» username</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» password</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» type</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» nets</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» md5_k1</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» md5_k2</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» vipps</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» client_secret</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» subscription_key</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» visiolink</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» identifier</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» sms</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» gateway</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» varnish</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» default_backend</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» force_https</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» ssl</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» dnsWildcard</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» httpHost</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» edges</td>
+<td>[string]</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» subscription_system</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» type</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» instance</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» title_code</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» locked</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» aria_golive_date</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» nets_params</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» account_number</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» setup_code</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» merchant_id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» issuer_id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» vipps_params</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» client_id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» apps</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» nyhetsappen</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» newspaperId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» ios</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» appId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» android</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» appId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» webforwards</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» <strong>additionalProperties</strong></td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» url</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Possible enum ignored, as sample data included 13 distinct values on 2021-02-16.</td>
+</tr>
+<tr>
+<td>»»» http_code</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>Minimum and maximum constraints derived from sample data on 2021-02-16.</td>
+</tr>
+<tr>
+<td>» gsuite</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» orgunit</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» group</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» recommendations</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» engineV1</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» kind</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» position</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» disabled</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» engineSublistV1</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» kind</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» disabled</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» size</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» contentmarketing</td>
+<td>any</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<p>oneOf</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»»» <em>anonymous</em></td>
+<td><a href="#schemasiteconfigresponse/items/properties/config/properties/recommendations/properties/enginev1">SiteconfigResponse/items/properties/config/properties/recommendations/properties/engineV1</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<p>xor</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»»» <em>anonymous</em></td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» position</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» disabled</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»» teaserId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<p>continued</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»» consumermarketing</td>
+<td>any</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<p>oneOf</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»»» <em>anonymous</em></td>
+<td><a href="#schemasiteconfigresponse/items/properties/config/properties/recommendations/properties/enginev1">SiteconfigResponse/items/properties/config/properties/recommendations/properties/engineV1</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<p>xor</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»»» <em>anonymous</em></td>
+<td><a href="#schemasiteconfigresponse/items/properties/config/properties/recommendations/properties/contentmarketing/oneof/1">SiteconfigResponse/items/properties/config/properties/recommendations/properties/contentmarketing/oneOf/1</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<p>continued</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>» chat</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» orgId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» orgName</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» queueName</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values-3'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>active</td>
+</tr>
+<tr>
+<td>status</td>
+<td>inactive</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>nb</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>nn</td>
+</tr>
+<tr>
+<td>design</td>
+<td>default</td>
+</tr>
+<tr>
+<td>design</td>
+<td>nettavisen</td>
+</tr>
+<tr>
+<td>premium_design</td>
+<td>default</td>
+</tr>
+<tr>
+<td>premium_design</td>
+<td>nettavisen</td>
+</tr>
+<tr>
+<td>metadataBackend</td>
+<td>acpsanity</td>
+</tr>
+<tr>
+<td>metadataBackend</td>
+<td>cloudordino</td>
+</tr>
+<tr>
+<td>class</td>
+<td>VEI0</td>
+</tr>
+<tr>
+<td>class</td>
+<td>VEI1</td>
+</tr>
+<tr>
+<td>class</td>
+<td>VEI2</td>
+</tr>
+<tr>
+<td>class</td>
+<td>VEI3</td>
+</tr>
+<tr>
+<td>class</td>
+<td>VEI4</td>
+</tr>
+<tr>
+<td>class</td>
+<td>VEI5</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Nidaros</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Vest</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Buskerud-Vestfold</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Haugalandet</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Nord</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Telemark-Agder</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Midt-Norge</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Romerike-Innlandet</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Follo-Østfold</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Nordsjø</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Nasjonal</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Test</td>
+</tr>
+<tr>
+<td>churn</td>
+<td>ab</td>
+</tr>
+<tr>
+<td>churn</td>
+<td>off</td>
+</tr>
+<tr>
+<td>kind</td>
+<td>DataTopListWithHashes</td>
+</tr>
+<tr>
+<td>kind</td>
+<td>DataTopListWithHashes</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_PropertyListResponse">PropertyListResponse</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemapropertylistresponse"></a>
+<a id="schema_PropertyListResponse"></a>
+<a id="tocSpropertylistresponse"></a>
+<a id="tocspropertylistresponse"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"medusa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"overridable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>A list of property names and values</p>
+<h3 id='properties-5'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><em>anonymous</em></td>
+<td>[<a href="#schemasinglepropertyresponse">SinglePropertyResponse</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>A list of property names and values</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_SinglePropertyResponse">SinglePropertyResponse</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemasinglepropertyresponse"></a>
+<a id="schema_SinglePropertyResponse"></a>
+<a id="tocSsinglepropertyresponse"></a>
+<a id="tocssinglepropertyresponse"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"medusa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"overridable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>A property name and value</p>
+<h3 id='properties-6'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>value of the property</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>name of the property</td>
+</tr>
+<tr>
+<td>medusa</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+<td>deprecated</td>
+</tr>
+<tr>
+<td>overridable</td>
+<td>boolean</td>
+<td>true</td>
+<td>none</td>
+<td>deprecated</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">curl</a>
+                <a href="#" data-language-name="http">HTTP</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

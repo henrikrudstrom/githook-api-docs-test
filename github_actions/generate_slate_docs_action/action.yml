@@ -1,0 +1,16 @@
+# action.yml
+name: 'Build slate docs'
+description: 'Greet someone and record the time'
+inputs:
+  input-dir:  # id of input
+    description: 'directory containing slatedocs source'
+    required: true
+  output-dir:  # id of input
+    description: 'destination for generated files'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    DOC_BASE_FOLDER: ${{ inputs.input-dir }}
+    DOC_OUTPUT_FOLDER: ${{ inputs.output-dir }}

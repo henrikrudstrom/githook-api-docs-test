@@ -16,10 +16,10 @@ jobs:
           spec-path: './specifications'
           output-path: './output'
       - name: Build documentation
-        uses: docker://decathlon/slate-builder-action:latest
-        env:
-          DOC_BASE_FOLDER:  "./output/source"
-          ZIP_BUILD: "false"
+        uses: ./github_actions/generate_slate_docs_action
+        with:
+          input-path: './source'
+          output-path: './output/slate'
       - uses: actions/upload-artifact@v2
         with:
           name: spec-output
